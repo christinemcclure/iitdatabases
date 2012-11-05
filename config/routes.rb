@@ -1,4 +1,6 @@
 Iitdatabases::Application.routes.draw do
+  resources :databases
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
