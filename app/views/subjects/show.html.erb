@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @subject.title %>
+</p>
+
+<p>
+  <b>Iit major:</b>
+  <%= @subject.iit_major %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @subject.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<%= link_to 'Back', subjects_path %>
