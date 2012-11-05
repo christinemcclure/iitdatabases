@@ -11,11 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105034838) do
+ActiveRecord::Schema.define(:version => 20121105035357) do
 
   create_table "databases", :force => true do |t|
     t.string   "title"
-    t.string   "string"
     t.string   "alt_titles"
     t.text     "description"
     t.boolean  "restricted"
