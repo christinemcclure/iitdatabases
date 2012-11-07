@@ -1,0 +1,37 @@
+<h1>Listing resources</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Alt titles</th>
+    <th>Description</th>
+    <th>Restricted</th>
+    <th>Active</th>
+    <th>Access url</th>
+    <th>Popular</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @resources.each do |resource| %>
+  <tr>
+    <td><%= resource.title %></td>
+    <td><%= resource.alt_titles %></td>
+    <td><%= resource.description %></td>
+    <td><%= resource.restricted %></td>
+    <td><%= resource.active %></td>
+    <td><%= resource.access_url %></td>
+    <td><%= resource.popular %></td>
+    <td><%= resource.notes %></td>
+    <td><%= link_to 'Show', resource %></td>
+    <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
+    <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Resource', new_resource_path %>

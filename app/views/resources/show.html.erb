@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @resource.title %>
+</p>
+
+<p>
+  <b>Alt titles:</b>
+  <%= @resource.alt_titles %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @resource.description %>
+</p>
+
+<p>
+  <b>Restricted:</b>
+  <%= @resource.restricted %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @resource.active %>
+</p>
+
+<p>
+  <b>Access url:</b>
+  <%= @resource.access_url %>
+</p>
+
+<p>
+  <b>Popular:</b>
+  <%= @resource.popular %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @resource.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_resource_path(@resource) %> |
+<%= link_to 'Back', resources_path %>

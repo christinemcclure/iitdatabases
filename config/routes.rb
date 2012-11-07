@@ -1,4 +1,6 @@
 Iitdatabases::Application.routes.draw do
+  resources :resources
+
   resources :subjects
 
   resources :vendors

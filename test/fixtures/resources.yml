@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  alt_titles: MyString
+  description: MyText
+  restricted: false
+  active: false
+  access_url: MyString
+  popular: false
+  notes: MyText
+
+two:
+  title: MyString
+  alt_titles: MyString
+  description: MyText
+  restricted: false
+  active: false
+  access_url: MyString
+  popular: false
+  notes: MyText
