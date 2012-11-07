@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item: MyString
+  iit_subject: false
+  notes: MyText
+
+two:
+  item: MyString
+  iit_subject: false
+  notes: MyText
