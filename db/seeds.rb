@@ -17,25 +17,25 @@
 #  }
 #])
 
-database = Database.create({
-  title: "My Database",
+resource = Resource.create({
+  title: "My Resource",
   description: "It's awesome"
 })
 
-database.subjects.create([
-  { title: "Geography" },
-  { title: "History" },
-  { title: "Chemistry" }
+resource.terms.create([
+  { item: "Geography" },
+  { item: "History" },
+  { item: "Chemistry" }
 ])
 
-database = Database.create({
-  title: "New Database",
+resource = Resource.create({
+  title: "New Resource",
   description: "It's really awesome"
 })
 
-subjects = ["Geography", "Chemistry", "Alchemy"]
-subjects.each do |s|
-  database.subjects << Subject.find_or_create_by_title(s)
+terms = ["Geography", "Chemistry", "Alchemy"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
 end
 
-database.save
+resource.save
