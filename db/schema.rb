@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108012948) do
+ActiveRecord::Schema.define(:version => 20121108013159) do
 
   create_table "databases_subjects", :id => false, :force => true do |t|
     t.integer "database_id"
@@ -34,14 +34,6 @@ ActiveRecord::Schema.define(:version => 20121108012948) do
   create_table "resources_terms", :id => false, :force => true do |t|
     t.integer "resource_id"
     t.integer "term_id"
-  end
-
-  create_table "subjects", :force => true do |t|
-    t.string   "title"
-    t.boolean  "iit_major"
-    t.text     "notes"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "terms", :force => true do |t|
