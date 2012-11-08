@@ -11,12 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108013159) do
-
-  create_table "databases_subjects", :id => false, :force => true do |t|
-    t.integer "database_id"
-    t.integer "subject_id"
-  end
+ActiveRecord::Schema.define(:version => 20121108013629) do
 
   create_table "resources", :force => true do |t|
     t.string   "title"
