@@ -7,7 +7,6 @@ Iitdatabases::Application.routes.draw do
 
   resources :vendors
 
-  resources :databases
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
