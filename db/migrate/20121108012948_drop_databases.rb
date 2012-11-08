@@ -1,7 +1,3 @@
 class DropDatabases < ActiveRecord::Migration
-  def up
-  end
-
-  def down
-  end
+ drop_table :databases
 end
