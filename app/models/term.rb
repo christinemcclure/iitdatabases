@@ -3,4 +3,8 @@ class Term < ActiveRecord::Base
   has_and_belongs_to_many :resources
   validates :item, presence: true
   default_scope :order => 'terms.item'
+
+ def item=(val)
+    write_attribute(:item, val.downcase)
+ end
 end
