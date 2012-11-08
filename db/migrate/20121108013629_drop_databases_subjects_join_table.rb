@@ -1,7 +1,3 @@
 class DropDatabasesSubjectsJoinTable < ActiveRecord::Migration
-  def up
-  end
-
-  def down
-  end
+  drop_table :databases_subjects
 end
