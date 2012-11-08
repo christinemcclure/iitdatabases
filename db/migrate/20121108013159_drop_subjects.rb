@@ -1,7 +1,3 @@
 class DropSubjects < ActiveRecord::Migration
-  def up
-  end
-
-  def down
-  end
+  drop_table :subjects
 end
