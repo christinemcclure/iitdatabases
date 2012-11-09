@@ -54,7 +54,7 @@
 <% @resource.terms.each do |term| %>
   <li>
     <%= term.item %>
-    <%= link_to 'Destroy', term, method: :delete, data: { confirm: 'Remove assocition to ' + resrceStr + '?' } %>
+    <%= link_to 'Remove', edit_resource_path(@resource), method: :delete, data: { confirm: 'Remove assocition to ' + resrceStr + '?' } %>
   </li>
 <% end %>
 </ul>
