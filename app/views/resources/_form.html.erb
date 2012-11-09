@@ -1,3 +1,4 @@
+<% resrceStr = "#{@resource.title}" #string interpolation of title name %>
 <%= form_for(@resource) do |f| %>
   <% if @resource.errors.any? %>
     <div id="error_explanation">
@@ -53,7 +54,7 @@
 <% @resource.terms.each do |term| %>
   <li>
     <%= term.item %>
-    <%= link_to 'Destroy', term, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Destroy', term, method: :delete, data: { confirm: 'Remove assocition to ' + resrceStr + '?' } %>
   </li>
 <% end %>
 </ul>
