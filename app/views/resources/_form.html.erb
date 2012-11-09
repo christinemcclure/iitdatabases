@@ -48,18 +48,15 @@
     <%= f.text_area :notes %>
   </div>
 
-  <%= f.fields_for :terms do |term| %>
-  <div class="field">
-    <%= term.label :item, "Term" %>
-    <%= term.text_field :item %>
-    <%= term.label :acronym, "Acronym" %>
-    <%= term.text_field :acronym %>
-    <%= term.label :iit_subject, "IIT Major?" %>
-    <%= term.check_box :iit_subject %>
-    <%= term.check_box :_destroy %>
-    <%= term.label :_destroy, "Remove term" %>
-  </div>
-  <% end %>
+<ul>
+  <h2>Terms associated with this resource:</h2>
+<% @resource.terms.each do |term| %>
+  <li>
+    <%= term.item %>
+    <%= link_to 'Destroy', term, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </li>
+<% end %>
+</ul>
 
   <div class="actions">
     <%= f.submit %>
