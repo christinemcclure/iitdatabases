@@ -2,6 +2,8 @@ Iitdatabases::Application.routes.draw do
   resources :terms
 
   resources :resources
+  
+  root to: 'resources#index'
 
 
   # The priority is based upon order of creation:
