@@ -4,4 +4,7 @@ class Resource < ActiveRecord::Base
   accepts_nested_attributes_for :terms, :allow_destroy => true
   validates :title, presence: true
   default_scope :order => 'resources.title'
+  def self.url_prefix
+    'http://ezproxy.gl.iit.edu/login?url='
+  end
 end
