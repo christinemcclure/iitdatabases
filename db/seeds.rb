@@ -79,7 +79,7 @@ resource = Resource.create({
   :description => "The Association for Computing Machinery Digital Library is an online repository of papers from publications that have been published, co-published, or co-marketed by the ACM, including journals, newsletters, and conference proceedings. All computing subject areas are covered.",
   :restricted => true,
   :active => true,
-  :access_url => "http://search.EBSCOhost.com/login.asp?profile=web&defaultdb=aph",
+  :access_url => "http://portal.acm.org/dl.cfm",
   :popular => true
 })
 terms = ["computer science","communications"]
@@ -94,7 +94,7 @@ resource = Resource.create({
   :description => "Business Source Premier, is the industry's most used business research database, providing full text for more than 2,300 journals, including full text for more than 1,100 peer-reviewed business publications. Full text coverage in all disciplines of business, including marketing, management, MIS, POM, accounting, finance and economics. Business Source Premier contains full text from the world's top management and marketing journals. The database also includes other sources of full text information such as country economic reports from the EIU, Global Insight, ICON Group and CountryWatch and detailed company profiles for the world's 10,000 largest companies. Additional full text, non-journal content includes market research reports, industry reports, country reports, company profiles and SWOT analyses.",
   :restricted => true,
   :active => true,
-  :access_url => "http://search.EBSCOhost.com/login.asp?profile=web&defaultdb=aph",
+  :access_url => "http://search.EBSCOhost.com/login.asp?profile=web&defaultdb=buh",
   :popular => true
 })
 terms = ["general","political science","humanities","psychology","english","communications","business"]
