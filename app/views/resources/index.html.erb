@@ -1,14 +1,11 @@
 <h1>Listing resources</h1>
-
 <table>
   <tr>
     <th>Title</th>
-    <th>Alt titles</th>
     <th>Owner</th>
     <th>Description</th>
     <th>Restricted</th>
     <th>Active</th>
-    <th>Access url</th>
     <th>Popular</th>
     <th>Notes</th>
     <th></th>
@@ -18,13 +15,17 @@
 
 <% @resources.each do |resource| %>
   <tr>
-    <td><%= resource.title %></td>
-    <td><%= resource.alt_titles %></td>
+    <% if resource.restricted == true
+          urlWithPrepend = Resource.url_prefix + resource.access_url
+        else
+          urlWithPrepend = resource.access_url
+        end
+    %>
+    <td><a class="btn" href="<%= urlWithPrepend %>"><%= resource.title %></a></td>
     <td><%= resource.owner %></td>
     <td><%= resource.description %></td>
     <td><%= resource.restricted %></td>
     <td><%= resource.active %></td>
-    <td><%= resource.access_url %></td>
     <td><%= resource.popular %></td>
     <td><%= resource.notes %></td>
     <td><%= link_to 'Show', resource %></td>
