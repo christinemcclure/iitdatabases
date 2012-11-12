@@ -7,4 +7,8 @@ class Term < ActiveRecord::Base
  def item=(val)
     write_attribute(:item, val.downcase)
  end
+
+ def acronym=(val)
+    write_attribute(:acronym, val.downcase)
+ end
 end
