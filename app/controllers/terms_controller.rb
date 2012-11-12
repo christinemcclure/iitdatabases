@@ -72,12 +72,12 @@ class TermsController < ApplicationController
   # DELETE /terms/1
   # DELETE /terms/1.json
   def destroy
-    @resource = Resource.find(:resource_id)
+    @resource = Resource.find(params[:resource_id])
     @term = resource.term.find(params[:id])
     @term.destroy
 
     respond_to do |format|
-      format.html { redirect_to terms_url }
+      format.html { redirect_to edit_resource_term_url() }
       format.json { head :no_content }
     end
   end
