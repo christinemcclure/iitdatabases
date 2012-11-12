@@ -1,7 +1,9 @@
 Iitdatabases::Application.routes.draw do
   resources :terms
 
-  resources :resources
+  resources :resources do
+    resources :terms
+  end
   
   root to: 'resources#index'
 
