@@ -72,7 +72,8 @@ class TermsController < ApplicationController
   # DELETE /terms/1
   # DELETE /terms/1.json
   def destroy
-    @term = Term.find(params[:id])
+    @resource = Resource.find(:resource_id)
+    @term = resource.term.find(params[:id])
     @term.destroy
 
     respond_to do |format|
