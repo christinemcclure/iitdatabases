@@ -50,20 +50,17 @@
   </div>
 
 <ul>
-  <h2>Terms associated with this resource:</h2>
-<%# @resource.terms.each do |term| %>
-  <%#*<li>%>
-    <%#= term.item %>
-    <%#= link_to 'Destroy', term, method: :delete, data: { confirm: 'Remove assocition to ' + resrceStr + '?' } %>
-  <%#*</li>%>
-<%# end %>
+  <h2>Subjects and Keywords associated with this resource:</h2>
   <% for term in Term.find(:all) %>
-  <li>
+    <li>
     <%= check_box_tag "resource[term_ids][]", term.id,
-    @resource.terms.include?(term) %>
-    <%= term.item %>
+     @resource.terms.include?(term) %>
+      <%#= term.iit_subject ? '<i class=\"icon-check\"></i>' : ' ' %>
+      <%= term.iit_subject ? 'Yes' : ' ' %>
+      <%= term.acronym.upcase %>
+      <%= term.item.titlecase %>
   <% end %>
-  </li>
+    </li>
 </ul>
 
   <div class="actions">
