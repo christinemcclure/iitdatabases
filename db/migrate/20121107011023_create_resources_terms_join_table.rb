@@ -1,7 +1,8 @@
 class CreateResourcesTermsJoinTable < ActiveRecord::Migration
   def up
     create_table :resources_terms, :id => false do |t|
-      t.references :resource, :term
+      t.integer :resource_id
+      t.integer :term_id
     end
   end
 
