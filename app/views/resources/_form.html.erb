@@ -59,7 +59,7 @@
 <%# end %>
   <% for term in Term.find(:all) %>
   <li>
-    <%= check_box_tag "resource[terms_ids][]", term.id,
+    <%= check_box_tag "resource[term_ids][]", term.id,
     @resource.terms.include?(term) %>
     <%= term.item %>
   <% end %>
