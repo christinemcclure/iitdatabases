@@ -1,4 +1,4 @@
-class ResourcesController < ApplicationController
+  class ResourcesController < ApplicationController
   # GET /resources
   # GET /resources.json
   def index
@@ -56,6 +56,7 @@ class ResourcesController < ApplicationController
   # PUT /resources/1
   # PUT /resources/1.json
   def update
+    params[:resource][:term_ids] || []
     @resource = Resource.find(params[:id])
 
     respond_to do |format|
