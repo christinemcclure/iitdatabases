@@ -7,7 +7,7 @@ gem 'bootstrap-sass', '2.0.4'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem "sqlite3"
+  gem "sqlite3", "1.3.6"
 end
 
 group :production do
