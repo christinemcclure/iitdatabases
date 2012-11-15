@@ -35,6 +35,7 @@
   # GET /resources/1/edit
   def edit
     @resource = Resource.find(params[:id])
+    @iit_terms = Term.all_iit_subjects
   end
 
   # POST /resources
