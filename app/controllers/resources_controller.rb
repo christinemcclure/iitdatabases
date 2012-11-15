@@ -36,6 +36,7 @@
   def edit
     @resource = Resource.find(params[:id])
     @iit_terms = Term.all_iit_subjects
+    @non_iit_terms = Term.all_iit_non_subjects
   end
 
   # POST /resources

@@ -63,9 +63,9 @@
 
 <ul>
   <h2>Other Associations:</h2>
-  <% for term in Term.find(:all) %>
+  <% @non_iit_terms.each do |term| %>
     <li>
-    <%= check_box_tag "resource[term_ids][]", term.id,
+    <%= check_box_tag "resource[term_ids][]", term.id, #this sets the box as pre-checked if true in DB
      @resource.terms.include?(term) %>
       <% if term.iit_subject == false%>
         <%= term.acronym.upcase %>

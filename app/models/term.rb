@@ -18,4 +18,8 @@ class Term < ActiveRecord::Base
    find_all_by_iit_subject(true)
  end
 
+ def self.all_iit_non_subjects
+   find_all_by_iit_subject(false)
+ end
+
 end
