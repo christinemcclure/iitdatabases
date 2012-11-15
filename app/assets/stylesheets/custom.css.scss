@@ -1,1 +1,13 @@
 @import "bootstrap";
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
