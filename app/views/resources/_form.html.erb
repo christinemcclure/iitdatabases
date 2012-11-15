@@ -50,15 +50,27 @@
   </div>
 
 <ul>
-  <h2>Subjects and Keywords associated with this resource:</h2>
+  <h2>IIT Subject Associations:</h2>
+  <% @iit_terms.each do |term| %>
+    <li>
+    <%= check_box_tag "resource[term_ids][]", term.id,
+     @resource.terms.include?(term) %>
+        <%= term.acronym.upcase %>
+        <%= term.item.titlecase %>
+  <% end %>
+    </li>
+</ul>
+
+<ul>
+  <h2>Other Associations:</h2>
   <% for term in Term.find(:all) %>
     <li>
     <%= check_box_tag "resource[term_ids][]", term.id,
      @resource.terms.include?(term) %>
-      <%#= term.iit_subject ? '<i class=\"icon-check\"></i>' : ' ' %>
-      <%= term.iit_subject ? 'Yes' : ' ' %>
-      <%= term.acronym.upcase %>
-      <%= term.item.titlecase %>
+      <% if term.iit_subject == false%>
+        <%= term.acronym.upcase %>
+        <%= term.item.titlecase %>
+      <% end %>
   <% end %>
     </li>
 </ul>
