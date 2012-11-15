@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'bootstrap-sass', '2.0.4'
 
+gem 'thinking-sphinx', '2.0.10' # for search
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
