@@ -7,4 +7,11 @@ class Resource < ActiveRecord::Base
   def self.url_prefix
     'http://ezproxy.gl.iit.edu/login?url='
   end
+
+  define_index do
+    indexes title
+    indexes alt_titles
+    indexes description
+  end
+
 end
