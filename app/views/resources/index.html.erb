@@ -23,7 +23,7 @@
     %>
     <td><a class="btn" href="<%= urlWithPrepend %>"><%= resource.title %></a></td>
     <td><%= resource.owner %></td>
-    <td><%= resource.description %></td>
+    <td><%= myTruncate(resource.description) %></td>
     <td><%= resource.restricted %></td>
     <td><%= resource.active %></td>
     <td><%= resource.popular %></td>
