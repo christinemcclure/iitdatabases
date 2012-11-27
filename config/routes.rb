@@ -1,13 +1,16 @@
 Iitdatabases::Application.routes.draw do
-  get "session/create"
-
-  get "session/destroy"
 
   resources :terms
 
   resources :resources do
     resources :terms
   end
+
+  map.resources :sessions, :resources
+  map.home '', :controller => 'resources', :action => 'index'
+  map.login 'login', :controller => 'sessions', :action => 'new'
+  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
+
   
   root to: 'resources#index'
 
