@@ -29,15 +29,15 @@
     <td><%= resource.popular %></td>
     <td><%= resource.notes %></td>
     <td><%= link_to 'Show', resource %></td>
-  <div class="actions">
+  <% if admin? %>
     <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
     <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </div>
+  <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-<div class="actions">
+<% if admin? %>
   <%= link_to 'New Resource', new_resource_path %>
-</div>
+<% end %>
