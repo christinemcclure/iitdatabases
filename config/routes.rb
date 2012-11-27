@@ -1,4 +1,8 @@
 Iitdatabases::Application.routes.draw do
+  get "session/create"
+
+  get "session/destroy"
+
   resources :terms
 
   resources :resources do
