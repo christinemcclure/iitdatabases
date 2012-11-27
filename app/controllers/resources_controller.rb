@@ -1,6 +1,8 @@
   class ResourcesController < ApplicationController
   # GET /resources
   # GET /resources.json
+  before_filter :authorize, :except => :index
+
   def index
     @resources = Resource.all
 
