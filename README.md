@@ -13,6 +13,10 @@
 * Try adding multi-level search
 
 ##Login
-* Show everything, but only edit when logged in
+Working, do the following:
+* Make password field empty upon login
+* Add login/logout to app view
+* Add message holder to login/logout
+
 
 
