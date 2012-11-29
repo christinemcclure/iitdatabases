@@ -6,9 +6,9 @@ Iitdatabases::Application.routes.draw do
     resources :terms
   end
 
-  map.connect "login", :controller => "sessions", :action => "create"
-  map.connect "logout", :controller => "sessions", :action => "destroy"
-
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  
   #map.resources :sessions, :resources
   #map.home '', :controller => 'resources', :action => 'index'
   #map.login 'login', :controller => 'sessions', :action => 'new'
