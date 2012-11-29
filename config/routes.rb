@@ -9,6 +9,8 @@ Iitdatabases::Application.routes.draw do
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   
+  get '/logout' => 'session#destroy'
+  
   #map.resources :sessions, :resources
   #map.home '', :controller => 'resources', :action => 'index'
   #map.login 'login', :controller => 'sessions', :action => 'new'
