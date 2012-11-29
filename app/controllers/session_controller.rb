@@ -5,13 +5,15 @@ class SessionController < ApplicationController
   
   def create
     session[:password] = params[:password]
-    flash[:notice] = "Successfully logged in"
+    if admin?
+      flash[:notice] = "logged in"
+    end
     redirect_to root_path
   end
 
   def destroy
     reset_session
-    flash[:notice] = "Successfully logged out"
+    flash[:notice] = "guest"
     redirect_to login_path
   end
 end
