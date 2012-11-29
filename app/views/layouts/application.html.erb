@@ -11,9 +11,14 @@
     <div class="admin">
       <%= link_to 'Login', login_path %> |
       <%= link_to 'Logout', logout_path %>
-      <% if flash[:notice] %>
-        <p class="flash-notice"><%= flash[:notice] %></p>
-      <% end %>
+      <%
+        if admin?
+          status_msg = "logged in"
+        else
+          status_msg = "guest"
+        end      
+      %>
+      <p><%= status_msg %></p>
     </div>
     <%= yield %>
   </div>
