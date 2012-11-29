@@ -6,10 +6,13 @@ Iitdatabases::Application.routes.draw do
     resources :terms
   end
 
-  map.resources :sessions, :resources
-  map.home '', :controller => 'resources', :action => 'index'
-  map.login 'login', :controller => 'sessions', :action => 'new'
-  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
+  map.connect "login", :controller => "sessions", :action => "create"
+  map.connect "logout", :controller => "sessions", :action => "destroy"
+
+  #map.resources :sessions, :resources
+  #map.home '', :controller => 'resources', :action => 'index'
+  #map.login 'login', :controller => 'sessions', :action => 'new'
+  #map.logout 'logout', :controller => 'sessions', :action => 'destroy'
 
   
   root to: 'resources#index'
