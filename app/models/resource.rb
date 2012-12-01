@@ -13,7 +13,8 @@ class Resource < ActiveRecord::Base
     if search
       search_condition = "%" + search + "%"
       find(:all, :conditions => ['title LIKE ? OR alt_titles LIKE ? OR description LIKE ? OR notes LIKE ?', search_condition, search_condition, search_condition, search_condition])
-
+      
+      #joins(:terms).where('item LIKE ?', search_condition)
     else
       find(:all)
     end
