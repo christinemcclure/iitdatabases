@@ -79,7 +79,6 @@ terms = Term.create ([
   {:item => "naval science",:acronym => "",:iit_subject => true},
   {:item => "Naval Science",:acronym => "ns",:iit_subject => true},
   {:item => "philosophy",:acronym => "",:iit_subject => true},
-  {:item => "physics",:acronym => "",:iit_subject => true},
   {:item => "physics",:acronym => "phys",:iit_subject => true},
   {:item => "political science",:acronym => "ps",:iit_subject => true},
   {:item => "politicial science",:acronym => "",:iit_subject => true},
@@ -144,4 +143,21 @@ terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
 
+resource = Resource.create({
+  :title => "American Association of Physics Teachers",
+  :alt_titles => "AAPT",
+  :owner => "Scitation",
+  :description => "Access journals published by the American Association of Physics Teachers in the field of physics.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://ojps.aip.org/vsearch/servlet/VerityServlet?KEY=ALL",
+  :popular => false
+})
+terms = ["Mathematics","physics"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+
 resource.save
+
