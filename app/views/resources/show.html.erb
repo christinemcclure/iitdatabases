@@ -43,7 +43,7 @@
 <ul>
 <% @resource.terms.each do |term| %>
   <li>
-    <p><%= term.item %></p>
+    <p><%= term.item %> <%= term.acronym  %> </p>
   </li>
 <% end %>
 </ul>

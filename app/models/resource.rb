@@ -14,12 +14,15 @@ class Resource < ActiveRecord::Base
     
     if search
       search_condition = "%" + search + "%"
-      #working without join
-      where(['title LIKE ? OR alt_titles LIKE ? OR description LIKE ? OR notes LIKE ?', search_condition, search_condition, search_condition, search_condition])
+      #just select resources
+      #where(['title LIKE ? OR alt_titles LIKE ? OR description LIKE ?', search_condition, search_condition, search_condition])
 
-      #below doesn't work. try different join
-      #where(['title LIKE ? OR alt_titles LIKE ? OR description LIKE ?', search_condition, search_condition, search_condition]).joins(:terms).where('item LIKE ?', search_condition)
-
+      #just select terms
+      #joins(:terms).where('item LIKE ? OR acronym like ?', search_condition, search_condition)
+      
+      #select both
+      find_by_sql ["SELECT resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE ((title LIKE ? OR alt_titles LIKE ? OR description LIKE ?) OR (item LIKE ? OR acronym like ?)) GROUP BY title ORDER BY title", search_condition, search_condition, search_condition, search_condition, search_condition]
+      
     else
       find(:all)
     end
