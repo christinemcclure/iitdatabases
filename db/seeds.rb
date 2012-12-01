@@ -251,6 +251,202 @@ terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
 
+resource = Resource.create({
+  :title => "LexisNexis Academic Universe",
+  :alt_titles => "",
+  :owner => "LexisNexis Academic",
+  :description => "Vast database of news, business, legal, medical, and reference publications.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://www.lexisnexis.com/us/lnacademic",
+  :popular => true
+})
+terms = ["general","political science","english","communications","business"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "PsycINFO",
+  :alt_titles => "psychinfo",
+  :owner => "EBSCOhost",
+  :description => "The authoritative source for scholarly literature in the behavioral sciences and mental health.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://search.ebscohost.com/login.asp?profile=web&amp;defaultdb=psyh",
+  :popular => true
+})
+terms = ["psychology", "business", "sociology"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "Web of Science",
+  :alt_titles => "",
+  :owner => "ISI",
+  :description => "Comprehensive index of journal literature in the sciences.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://apps.webofknowledge.com/WOS_GeneralSearch_input.do?product=WOS&search_mode=GeneralSearch",
+  :popular => true
+})
+terms = ["chemistry", "physics", "materials science", "Biomedical Engineering", "biology", "chemical engineering", "Food Process Engineering", "Food Safety and Technology"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "WorldCat",
+  :alt_titles => "",
+  :owner => "OCLC FirstSearch",
+  :description => "Online catalog featuring the holdings of more than 8,000 libraries worldwide.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://newfirstsearch.oclc.org/dbname=WorldCat;FSIP",
+  :popular => true
+})
+terms = ["general","literature"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "ProQuest SciTech Collection",
+  :alt_titles => "",
+  :owner => "ProQuest",
+  :description => "A comprehensive collection of databases for the natural sciences and technology.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://search.proquest.com/technologycollection",
+  :popular => false
+})
+terms = ["chemistry", "physics", "materials science", "Biomedical Engineering", "biology", "chemical engineering", "Food Process Engineering", "Food Safety and Technology", "technology", "communications"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "AAPT",
+  :alt_titles => "American Association of Physics Teachers",
+  :owner => "Scitation",
+  :description => "Access journals published by the AAPT in the field of physics.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://ojps.aip.org/vsearch/servlet/VerityServlet?KEY=ALL",
+  :popular => false
+})
+terms = ["physics"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "Acronym Finder",
+  :alt_titles => "",
+  :owner => "Acronym Finder",
+  :description => "Online dictionary of acronyms, abbreviations, and initialisms.",
+  :restricted => false,
+  :active => true,
+  :access_url => "http://www.acronymfinder.com/",
+  :popular => false
+})
+terms = ["general", "technology"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "ACS",
+  :alt_titles => "American Chemical Society",
+  :owner => "ACS Publications",
+  :description => "Journals published by the American Chemical Society.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://pubs.acs.org/wls/journals/query/subscriberSearch.html",
+  :popular => false
+})
+terms = ["chemistry"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "ADAMS",
+  :alt_titles => "Agencywide Documents Access and Management System",
+  :owner => "United States Nuclear Regulatory Commission",
+  :description => "Reports and documents from the Nuclear Regulatory Commission (NRC).",
+  :restricted => false,
+  :active => true,
+  :access_url => "http://www.nrc.gov/reading-rm/adams/web-based.html",
+  :popular => false
+})
+terms = ["physics", "materials science"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "AISC freePubs",
+  :alt_titles => "American Institute of Steel Construction",
+  :owner => "American Institute of Steel Construction",
+  :description => "Provides many free publications of the AISC, including specifications, codes, siesmic resources, and revisions to AISC publications.",
+  :restricted => false,
+  :active => true,
+  :access_url => "",
+  :popular => false
+})
+terms = ["Civil and Architectural Engineering", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "American Institute of Physics",
+  :alt_titles => "AIPS",
+  :owner => "Scitation",
+  :description => "Journals published by the American Institute of Physics.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://ojps.aip.org/vsearch/servlet/VerityServlet?KEY=ALL",
+  :popular => false
+})
+terms = ["physics", "materials science"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "American Physical Society",
+  :alt_titles => "APS",
+  :owner => "American Physical Society",
+  :description => "Journals published by the American Physical Society.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://publish.aps.org/",
+  :popular => false
+})
+terms = ["physics"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "Article First",
+  :alt_titles => "",
+  :owner => "OCLC FirstSearch",
+  :description => "Interdisciplinary database covering journal literature in all subject areas.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://newfirstsearch.oclc.org/dbname=ArticleFirst;FSIP",
+  :popular => false
+})
+terms = ["general"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+
 #resource = Resource.create({
 #  :title => "",
 #  :alt_titles => "",
