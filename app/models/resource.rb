@@ -15,10 +15,10 @@ class Resource < ActiveRecord::Base
     if search
       search_condition = "%" + search + "%"
       #working without join
-      where(['title LIKE ? OR alt_titles LIKE ? OR description LIKE ? OR notes LIKE ?', search_condition, search_condition, search_condition, search_condition])
+      #where(['title LIKE ? OR alt_titles LIKE ? OR description LIKE ? OR notes LIKE ?', search_condition, search_condition, search_condition, search_condition])
 
       #below doesn't work. try different join
-      #where(['title LIKE ? OR alt_titles LIKE ? OR description LIKE ?', search_condition, search_condition, search_condition]).joins(:terms).where('item LIKE ?', search_condition)
+      joins(:terms).where('item LIKE ? OR acronym like ?', search_condition, search_condition)
 
     else
       find(:all)
