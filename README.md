@@ -1,22 +1,24 @@
 #TO DO
 
 ##Misc
-* Change links to separate button
+* X Change links to separate button
 * Make index page filter on favorites only
-* On show page, only show popular, access_url, notes if in edit mode (split form)
+* Change index view to show all items for admins
+* On show page, only show popular, access_url, notes if admin
+* Nav: sidebar with admin components at the bottom
 * color scheme
 
 
 ##Search
 * Have listbox of iit subjects and pull those databases
-* Start with just description field only
-* Try adding multi-level search
+* X Start with just description field only
+* X Try adding multi-level search
 
 ##Login
 Working, do the following:
-* Make password field empty upon login
-* Add login/logout to app view
-* Add message holder to login/logout
+* X (Firefox glitch) Make password field empty upon login
+* X Add login/logout to app view
+* X Add message holder to login/logout
 
 
 
