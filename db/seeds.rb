@@ -57,14 +57,8 @@ terms = Term.create ([
   {:item => "intellectual property management and markets",:acronym => "IPMM",:iit_subject => true},
   {:item => "internship",:acronym => "",:iit_subject => false},
   {:item => "interprofessional project",:acronym => "ipro",:iit_subject => true},
-  {:item => "interprofessional seminar",:acronym => "",:iit_subject => true},
-  {:item => "introarch_opd",:acronym => "",:iit_subject => true},
   {:item => "itcp security",:acronym => "",:iit_subject => true},
-  {:item => "itcp theory and technology",:acronym => "",:iit_subject => true},
-  {:item => "itm theory and technology",:acronym => "",:iit_subject => true},
   {:item => "landscape architecture",:acronym => "",:iit_subject => true},
-  {:item => "law continuation studies",:acronym => "",:iit_subject => true},
-  {:item => "law",:acronym => "law",:iit_subject => true},
   {:item => "literature",:acronym => "lit",:iit_subject => true},
   {:item => "management science",:acronym => "",:iit_subject => true},
   {:item => "marketing analytics and communications",:acronym => "",:iit_subject => true},
@@ -72,28 +66,22 @@ terms = Term.create ([
   {:item => "materials science",:acronym => "",:iit_subject => true},
   {:item => "mathematics and science education",:acronym => "",:iit_subject => true},
   {:item => "Mathematics",:acronym => "math",:iit_subject => true},
-  {:item => "mba business",:acronym => "",:iit_subject => true},
-  {:item => "mechanical, materials and aerospace engineering",:acronym => "",:iit_subject => true},
-  {:item => "military science",:acronym => "",:iit_subject => true},
+  {:item => "mba business",:acronym => "mba",:iit_subject => true},
+  {:item => "mechanical, materials and aerospace engineering",:acronym => "mmae",:iit_subject => true},
+  {:item => "military science",:acronym => "ms",:iit_subject => true},
   {:item => "Military Science",:acronym => "mils",:iit_subject => true},
-  {:item => "naval science",:acronym => "",:iit_subject => true},
-  {:item => "Naval Science",:acronym => "ns",:iit_subject => true},
-  {:item => "philosophy",:acronym => "",:iit_subject => true},
+  {:item => "naval science",:acronym => "ns",:iit_subject => true},
+  {:item => "philosophy",:acronym => "phil",:iit_subject => true},
   {:item => "physics",:acronym => "phys",:iit_subject => true},
   {:item => "political science",:acronym => "ps",:iit_subject => true},
-  {:item => "politicial science",:acronym => "",:iit_subject => true},
   {:item => "pro learning online",:acronym => "",:iit_subject => false}, 
   {:item => "professional communication advancement",:acronym => "",:iit_subject => true},
   {:item => "professional learning",:acronym => "",:iit_subject => true},  
   {:item => "proficiency of english as a second language",:acronym => "",:iit_subject => true},
-  {:item => "pschology",:acronym => "",:iit_subject => true},
-  {:item => "Psychology",:acronym => "psyc",:iit_subject => true},
-  {:item => "public administration",:acronym => "",:iit_subject => true},
+  {:item => "pschology",:acronym => "psyc",:iit_subject => true},
+  {:item => "public administration",:acronym => "pa",:iit_subject => true},
   {:item => "shimer college",:acronym => "",:iit_subject => false},
-  {:item => "sociology",:acronym => "",:iit_subject => true},
   {:item => "sociology",:acronym => "soc",:iit_subject => true},
-  {:item => "stuart school of business",:acronym => "",:iit_subject => false},
-  {:item => "study abroad",:acronym => "",:iit_subject => false},
   {:item => "technology",:acronym => "",:iit_subject => false},
   {:item => "undergraduate continuing studies",:acronym => "",:iit_subject => false}
 ])
@@ -101,14 +89,14 @@ terms = Term.create ([
 resource = Resource.create({
   :title => "Academic Search Premier",
   :alt_titles => "ASP",
-  :owner => "EBSCO",
-  :description => "Considered the world's largest multi-discipline full-text database of scholarly knowledge, this database is a good place to start searching for information on almost any topic. Covering all areas of academic study, this database contains indexing and abstracting for more than 8,200 magazines and journals, of which more than 3,600 are full-text peer-reviewed publications.",
+  :owner => "EBSCOhost",
+  :description => "One of the largest full-text databases of scholarly information. A good place to start searching for journal articles on almost any topic.",
   :restricted => true,
   :active => true,
   :access_url => "http://search.EBSCOhost.com/login.asp?profile=web&defaultdb=aph",
   :popular => true
 })
-terms = ["general","political science","humanities","psychology","english","communications","business"]
+terms = ["general","literature","political science","humanities","psychology","english","communications","business"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -117,7 +105,7 @@ resource = Resource.create({
   :title => "ACM Digital Library",
   :alt_titles => "Association for Computing Machinery",
   :owner => "ACM Portal",
-  :description => "The Association for Computing Machinery Digital Library is an online repository of papers from publications that have been published, co-published, or co-marketed by the ACM, including journals, newsletters, and conference proceedings. All computing subject areas are covered.",
+  :description => "Online repository of papers and publications from the ACM, covering all aspects of computing.",
   :restricted => true,
   :active => true,
   :access_url => "http://portal.acm.org/dl.cfm",
@@ -131,8 +119,8 @@ end
 resource = Resource.create({
   :title => "Business Source Premier",
   :alt_titles => "BSP",
-  :owner => "EBSCO",
-  :description => "Business Source Premier, is the industry's most used business research database, providing full text for more than 2,300 journals, including full text for more than 1,100 peer-reviewed business publications. Full text coverage in all disciplines of business, including marketing, management, MIS, POM, accounting, finance and economics. Business Source Premier contains full text from the world's top management and marketing journals. The database also includes other sources of full text information such as country economic reports from the EIU, Global Insight, ICON Group and CountryWatch and detailed company profiles for the world's 10,000 largest companies. Additional full text, non-journal content includes market research reports, industry reports, country reports, company profiles and SWOT analyses.",
+  :owner => "EBSCOhost",
+  :description => "This database covers all disciplines of business, including marketing, management, MIS, POM, accounting, finance and economics.",
   :restricted => true,
   :active => true,
   :access_url => "http://search.EBSCOhost.com/login.asp?profile=web&defaultdb=buh",
@@ -144,19 +132,140 @@ terms.each do |s|
 end
 
 resource = Resource.create({
-  :title => "American Association of Physics Teachers",
-  :alt_titles => "AAPT",
-  :owner => "Scitation",
-  :description => "Access journals published by the American Association of Physics Teachers in the field of physics.",
+  :title => "Avery Index to Architectural Periodicals",
+  :alt_titles => "",
+  :owner => "EBSCOhost",
+  :description => "Comprehensive database of literature on architecture and design.",
   :restricted => true,
   :active => true,
-  :access_url => "http://ojps.aip.org/vsearch/servlet/VerityServlet?KEY=ALL",
+  :access_url => "http://search.EBSCOhost.com/login.asp?profile=web&defaultdb=bvh",
   :popular => false
 })
-terms = ["Mathematics","physics"]
+terms = ["archiecture","architecture and urbanism"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
+
+resource = Resource.create({
+  :title => "Books 24x7",
+  :alt_titles => "Books Twenty-four by seven",
+  :owner => "Books 24x7",
+  :description => "E-books covering computer science and information technology.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://library.books24x7.com/library.asp?^B",
+  :popular => true
+})
+terms = ["computer science","technology", "Engineering Graphics", "information technology and management", "communications"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "Dissertations and Theses",
+  :alt_titles => "",
+  :owner => "Proquest",
+  :description => "http://search.proquest.com/pqdtft.",
+  :restricted => true,
+  :active => true,
+  :access_url => "Online database of doctoral dissertations.",
+  :popular => false
+})
+terms = ["general", "Graduate Continuation Studies", "undergraduate continuing studies"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "ERIC",
+  :alt_titles => "Education Resources Information Center",
+  :owner => "EBSCOhost",
+  :description => "Comprehensive database of information and literature on all aspects of education.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://search.EBSCOhost.com/login.asp?profile=web&defaultdb=eric",
+  :popular => true
+})
+terms = ["Cooperative Education", "mathematics and science education"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "Google Scholar",
+  :alt_titles => "",
+  :owner => "Google",
+  :description => "mathematics and science education",
+  :restricted => true,
+  :active => true,
+  :access_url => "mathematics and science education",
+  :popular => false
+})
+terms = ["general", "history"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "IEEE Xplore",
+  :alt_titles => "Institute of Electrical and Electronics Engineers",
+  :owner => "Institute of Electrical and Electronics Engineers",
+  :description => "Access the full text of publications from the IEEE and the IEE.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://ieeexplore.ieee.org/",
+  :popular => true
+})
+terms = ["Civil and Architectural Engineering", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "Inspec",
+  :alt_titles => "",
+  :owner => "EBSCOhost",
+  :description => "Comprehensive database covering all aspects of science, engineering, and technology.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://apps.webofknowledge.com/INSPEC_GeneralSearch_input.do?product=INSPEC&search_mode=GeneralSearch",
+  :popular => false
+})
+terms = ["technology", "computer science", "communications", "Civil and Architectural Engineering", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+resource = Resource.create({
+  :title => "JSTOR",
+  :alt_titles => "",
+  :owner => "JSTOR",
+  :description => "Archive of essential scholarly journals related to the humanities, physical sciences, and social sciences.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://www.jstor.org",
+  :popular => true
+})
+terms = ["english", "literature", "communications"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+#resource = Resource.create({
+#  :title => "",
+#  :alt_titles => "",
+#  :owner => "",
+#  :description => "",
+#  :restricted => true,
+#  :active => true,
+#  :access_url => "",
+#  :popular => false
+#})
+#terms = ["", ""]
+#terms.each do |s|
+#  resource.terms << Term.find_or_create_by_item(s)
+#end
+
 
 
 resource.save
