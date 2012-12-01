@@ -4,7 +4,7 @@
   before_filter :authorize, :except => [:index, :show]
 
   def index
-    @resources = Resource.all
+    @resources = Resource.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
