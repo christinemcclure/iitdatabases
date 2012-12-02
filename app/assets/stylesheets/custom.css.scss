@@ -1,12 +1,12 @@
 @import "bootstrap";
 
-.container-fluid {
+.container {
     width: 90%;
     margin: 0 auto;
 }
 
 @media (min-width: 768px) {
-    .container-fluid {
+    .container {
         width: 80%;
         margin: 0 auto;
     }
