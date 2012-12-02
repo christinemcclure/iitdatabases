@@ -5,6 +5,7 @@ class Term < ActiveRecord::Base
   has_and_belongs_to_many :resources
   validates :item, presence: true
   default_scope :order => 'terms.item'
+  scope :all_iit_subjects, :conditions => {iit_subject => true}, :order => 'item'
 
  def item=(val)
     write_attribute(:item, val.downcase)
