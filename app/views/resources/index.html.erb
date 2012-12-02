@@ -1,15 +1,9 @@
-<table>
+<table class="table table-striped">
   <tr>
     <th>Title</th>
-    <th>Owner</th>
     <th>Description</th>
-    <th>Restricted</th>
-    <th>Active</th>
-    <th>Popular</th>
-    <th>Notes</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Access</th>
+    <th>More</th>
   </tr>
 
 <% @resources.each do |resource| %>
@@ -21,12 +15,8 @@
         end
     %>
     <td><a class="btn" href="<%= urlWithPrepend %>"><%= resource.title %></a></td>
-    <td><%= resource.owner %></td>
     <td><%= myTruncate(resource.description) %></td>
-    <td><%= resource.restricted %></td>
-    <td><%= resource.active %></td>
-    <td><%= resource.popular %></td>
-    <td><%= resource.notes %></td>
+    <td>Go</td>
     <td><%= link_to 'Show', resource %></td>
   <% if admin? %>
     <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
