@@ -8,16 +8,17 @@
 </head>
 <body>
   <div class="container">
-    <header class="hero-unit">
-      <h1>IIT Libraries</h1>
-      <h2>Database finder</h2>
-    </header>
+  <header>
+   <h1>IIT Libraries</h1>
+    <h2>Database finder</h2>
+  </header>
     <div class="row">
-      <div class="span4">
-         <p>Get a list databases by subject major </p>
+      <div class="span3">
+        <div id="navbar-search">
+         <p>List databases by subject major </p>
           <%= form_tag resources_path, :method => 'get' do %>
             <%= select_tag "subject_search", options_from_collection_for_select(@terms, "id", "item"), {:include_blank => true} %>
-            <%= submit_tag "Search", :name => nil, :class => 'btn' %>
+            <%= submit_tag "Go", :name => nil, :class => 'btn' %>
         <% end %>
          <p>or</p>
         <%= form_tag resources_path, :method => 'get' do %>
@@ -37,15 +38,16 @@
           %>
           <p><%= status_msg %></p>
         </div>
+        </div>
        </div>
-        <div class="span8">
-          <p>Search for a database by keyword, title or subject:</p>
-          <%= form_tag resources_path, :method => 'get' do %>
-            <p>
-            <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search", :name => nil, :class => "" %>
-            </p>
-          <% end %>
+        <div class="span10">
+          <div id="keyword-search">
+            <%= form_tag resources_path, :method => 'get', :id => 'keyword_search' do %>
+              <p>Search by keyword, title or subject:</p>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "Search", :name => nil, :class => "btn" %>
+            <% end %>
+          </div>
   
           <% if flash[:alert] %>
             <p class="flash-error"><%= flash[:alert] %></p>
