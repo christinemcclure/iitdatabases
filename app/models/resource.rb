@@ -4,7 +4,7 @@ class Resource < ActiveRecord::Base
   accepts_nested_attributes_for :terms, :allow_destroy => true
   validates :title, presence: true
   default_scope :order => 'resources.title'
-
+  scope :popular_resources, :conditions => {:popular => true}
 
   def self.url_prefix
     'http://ezproxy.gl.iit.edu/login?url='
@@ -24,7 +24,7 @@ class Resource < ActiveRecord::Base
       find_by_sql ["SELECT resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE ((title LIKE ? OR alt_titles LIKE ? OR description LIKE ?) OR (item LIKE ? OR acronym like ?)) GROUP BY title ORDER BY title", search_condition, search_condition, search_condition, search_condition, search_condition]
       
     else
-      find(:all)
+      @resources = Resource.popular_resources
     end
   end
 
