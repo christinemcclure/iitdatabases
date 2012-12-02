@@ -4,8 +4,8 @@ class Resource < ActiveRecord::Base
   accepts_nested_attributes_for :terms, :allow_destroy => true
   validates :title, presence: true
   default_scope :order => 'resources.title'
-  scope :popular_resources, :conditions => {:popular => true}, :order => 'resources.title'
-  scope :all_active, :conditions => {:active => true}, :order => 'resources.title'
+  scope :popular_resources, :conditions => {:popular => true}, :order => 'lower(resources.title)'
+  scope :all_active, :conditions => {:active => true}, :order => 'upper(resources.title)'
 
   def self.url_prefix
     'http://ezproxy.gl.iit.edu/login?url='
@@ -17,8 +17,8 @@ class Resource < ActiveRecord::Base
   end
 
   def self.subject_search(subject_search)
-      search_condition = "%" + subject_search + "%"
-      joins(:terms).where('item LIKE ? OR acronym like ?', search_condition, search_condition).group(:title)
+      #search_condition = "%" + subject_search + "%"
+      joins(:terms).where('term_id = ?', subject_search).group(:title)
   end
 
 end
