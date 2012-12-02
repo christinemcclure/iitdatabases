@@ -1,15 +1,23 @@
 @import "bootstrap";
 
-.flash-notice{clear:both;}
 .container {
-    width: 90%;
-    margin: 0 auto;
+  border: 4px solid #c00;
+  margin: 0 auto;
+  margin-top:30px; 
+  padding: 20px;
+  background:white;
 }
+
+header {
+  .well{background:orange !important;}
+}
+
+.flash-notice{clear:both;}
+
 
 @media (min-width: 768px) {
     .container {
         width: 80%;
-        margin: 0 auto;
     }
 
     #navbar-search {
@@ -17,19 +25,20 @@
      }
 
     #keyword-search {
-      padding: 20px;
+      padding: 20px 20px 30px 20px;
       background:yellow;
       margin: 0 0 40px 0;
+     
       p{
         float:left;
-        margin: 0 10px;
+        margin: 8px 0 0 0;
       }
       input {
-        float:left;
+        float:right;
         width:200px;
         margin: 0 10px;
       }
-      .btn{width:80px;}
+      .btn{width:80px;float:right;}
     }
 
 }
