@@ -446,6 +446,102 @@ terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
 
+resource = Resource.create({
+  :title => "arXiv.org",
+  :alt_titles => "archive organization",
+  :owner => "Cornell University Library",
+  :description => "E-prints in mathematics, statistics, physics, quantitative biology, statistics, and computer science.",
+  :restricted => false,
+  :active => true,
+  :access_url => "http://arxiv.org/",
+  :popular => false
+})
+terms = ["mathematics and science education", "mathematics", "physics", "biology"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+
+resource = Resource.create({
+  :title => "ASCE Database",
+  :alt_titles => "American Society of Civil Engineers",
+  :owner => "American Society of Civil Engineers",
+  :description => "Journals and articles published by the ASCE.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://ascelibrary.org",
+  :popular => false
+})
+terms = ["Civil and Architectural Engineering", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+
+resource = Resource.create({
+  :title => "ASM Materials Information - Handbooks",
+  :alt_titles => "",
+  :owner => "ASM International",
+  :description => "Online edition of the ASM Handbook, 10th edition (aka Metals Handbook).",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://products.asminternational.org/hbk/index.jsp",
+  :popular => false
+})
+terms = ["Civil and Architectural Engineering", "Materials Science", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+
+resource = Resource.create({
+  :title => "ASM Materials Information - Alloy Center",
+  :alt_titles => "",
+  :owner => "ASM International",
+  :description => "Property data, performance charts, diagrams, and processing guidelines for specific metals and alloys.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://products.asminternational.org/alloycenter/index.jsp",
+  :popular => false
+})
+terms = ["Civil and Architectural Engineering", "Materials Science", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+
+resource = Resource.create({
+  :title => "ASME",
+  :alt_titles => "American Society of Mechanical Engineers",
+  :owner => "Scitation",
+  :description => "Journals published by the ASME.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://ojps.aip.org/vsearch/servlet/VerityServlet?KEY=ALL",
+  :popular => false
+})
+terms = ["Civil and Architectural Engineering", "Materials Science", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+
+resource = Resource.create({
+  :title => "Biological Abstracts",
+  :alt_titles => "",
+  :owner => "ISI",
+  :description => "Bibliographic references covering life science and biomedical research literature.",
+  :restricted => true,
+  :active => true,
+  :access_url => "http://apps.webofknowledge.com/BIOABS_GeneralSearch_input.do?product=BIOABS&search_mode=GeneralSearch",
+  :popular => false
+})
+terms = ["chemistry", "physics", "materials science", "Biomedical Engineering", "biology", "chemical engineering", "Food Process Engineering", "Food Safety and Technology"]
+terms.each do |s|
+  resource.terms << Term.find_or_create_by_item(s)
+end
+
+
 
 #resource = Resource.create({
 #  :title => "",
