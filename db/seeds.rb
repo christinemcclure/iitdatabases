@@ -31,20 +31,20 @@ terms = Term.create ([
   {:item => "business",:acronym => "bus",:iit_subject => true},
   {:item => "chemical engineering",:acronym => "che",:iit_subject => true},
   {:item => "chemistry",:acronym => "chem",:iit_subject => true},
-  {:item => "Civil and Architectural Engineering",:acronym => "cae",:iit_subject => true},
-  {:item => "Communications",:acronym => "com",:iit_subject => true},
+  {:item => "civil and architectural engineering",:acronym => "cae",:iit_subject => true},
+  {:item => "communications",:acronym => "com",:iit_subject => true},
   {:item => "computer science professional masters",:acronym => "csp",:iit_subject => true},
-  {:item => "Computer Science",:acronym => "cs",:iit_subject => true},
-  {:item => "Cooperative Education",:acronym => "coop",:iit_subject => true},
-  {:item => "Economics",:acronym => "econ",:iit_subject => true},
-  {:item => "Electrical and Computer Engineering",:acronym => "ece",:iit_subject => true},
-  {:item => "Engineering Graphics",:acronym => "eg",:iit_subject => true},
+  {:item => "computer science",:acronym => "cs",:iit_subject => true},
+  {:item => "cooperative education",:acronym => "coop",:iit_subject => true},
+  {:item => "economics",:acronym => "econ",:iit_subject => true},
+  {:item => "electrical and computer engineering",:acronym => "ece",:iit_subject => true},
+  {:item => "engineering graphics",:acronym => "eg",:iit_subject => true},
   {:item => "engineering management",:acronym => "em",:iit_subject => true},
   {:item => "english",:acronym => "eng",:iit_subject => true},
-  {:item => "Environmental Engineering",:acronym => "enve",:iit_subject => true},
-  {:item => "Environmental Management and Sustainability",:acronym => "ems",:iit_subject => true},
+  {:item => "environmental engineering",:acronym => "enve",:iit_subject => true},
+  {:item => "environmental management and sustainability",:acronym => "ems",:iit_subject => true},
   {:item => "exchange student",:acronym => "ex",:iit_subject => false},
-  {:item => "Food Process Engineering",:acronym => "fpe",:iit_subject => true},
+  {:item => "food process engineering",:acronym => "fpe",:iit_subject => true},
   {:item => "Food Safety and Technology",:acronym => "fst",:iit_subject => true},
   {:item => "general engineering",:acronym => "egr",:iit_subject => false},
   {:item => "general",:acronym => "",:iit_subject => false},
@@ -155,7 +155,7 @@ resource = Resource.create({
   :access_url => "http://library.books24x7.com/library.asp?^B",
   :popular => true
 })
-terms = ["computer science","technology", "Engineering Graphics", "information technology and management", "communications"]
+terms = ["computer science","civil and architectural engineering","technology", "Engineering Graphics", "information technology and management", "communications"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -215,7 +215,7 @@ resource = Resource.create({
   :access_url => "http://ieeexplore.ieee.org/",
   :popular => true
 })
-terms = ["Civil and Architectural Engineering", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms = ["civil and architectural engineering", "electrical and computer engineering", "engineering management", "environmental engineering", "general engineering", "mechanical, materials and aerospace engineering"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
