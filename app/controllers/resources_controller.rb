@@ -10,16 +10,31 @@
       @resources = Resource.search(params[:search])
     elsif params[:all_active]
       @resources = Resource.all_active
+      skip_count = 1
     else
       @resources = Resource.popular_resources
+      skip_count = 1
     end
-
+    
     @terms = Term.all_iit_subjects
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @resources }
+    if skip_count != 1
+      flash[:notice] =  @resources.count
     end
+#    if @resources.exists?
+#      resource_count = 0
+#      @resources.each do |resource|
+#       resource_count += 1
+#      end
+#      flash[:notice] =  resource_count.to_s + ' records found.'
+#     else
+#      flash[:notice] = "No records found."
+#    end
+#
+#    respond_to do |format|
+#      format.html # index.html.erb
+#      format.json { render json: @resources }
+#    end
   end
 
   # GET /resources/1
