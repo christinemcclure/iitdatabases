@@ -7,6 +7,7 @@
 * X On show page, only show popular, access_url, notes if not admin
 * Nav: sidebar with admin components at the bottom
 * color scheme
+* Fix sort - should be case-insensitive while keeping title in original case
 
 
 ##Search
