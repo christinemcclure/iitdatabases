@@ -4,28 +4,21 @@ class Resource < ActiveRecord::Base
   accepts_nested_attributes_for :terms, :allow_destroy => true
   validates :title, presence: true
   default_scope :order => 'resources.title'
-  scope :popular_resources, :conditions => {:popular => true}
+  scope :popular_resources, :conditions => {:popular => true}, :order => 'resources.title'
+  scope :all_active, :conditions => {:active => true}, :order => 'resources.title'
 
   def self.url_prefix
     'http://ezproxy.gl.iit.edu/login?url='
   end
 
   def self.search(search)
-    
-    if search
       search_condition = "%" + search + "%"
-      #just select resources
-      #where(['title LIKE ? OR alt_titles LIKE ? OR description LIKE ?', search_condition, search_condition, search_condition])
-
-      #just select terms
-      #joins(:terms).where('item LIKE ? OR acronym like ?', search_condition, search_condition)
-      
-      #select both
       find_by_sql ["SELECT resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE ((title LIKE ? OR alt_titles LIKE ? OR description LIKE ?) OR (item LIKE ? OR acronym like ?)) GROUP BY title ORDER BY title", search_condition, search_condition, search_condition, search_condition, search_condition]
-      
-    else
-      @resources = Resource.popular_resources
-    end
+  end
+
+  def self.subject_search(subject_search)
+      search_condition = "%" + subject_search + "%"
+      joins(:terms).where('item LIKE ? OR acronym like ?', search_condition, search_condition).group(:title)
   end
 
 end
