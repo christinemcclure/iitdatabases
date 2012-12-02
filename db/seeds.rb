@@ -165,10 +165,10 @@ resource = Resource.create({
   :title => "Dissertations and Theses",
   :alt_titles => "",
   :owner => "Proquest",
-  :description => "http://search.proquest.com/pqdtft.",
+  :description => "Online database of IIT students' doctoral dissertations.",
   :restricted => true,
   :active => true,
-  :access_url => "Online database of doctoral dissertations.",
+  :access_url => "http://search.proquest.com/pqdtlocal",
   :popular => false
 })
 terms = ["general", "Graduate Continuation Studies", "undergraduate continuing studies"]
