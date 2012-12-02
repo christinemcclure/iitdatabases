@@ -10,8 +10,8 @@
   <p>Get databases by subject major </p>
 <%= form_tag resources_path, :method => 'get' do %>
   <p>
-    <%= text_field_tag :subject_search, params[:subject_search] %>
-    <%= submit_tag "Search by Subject", :name => nil %>
+    <%= select_tag "subject_search", options_from_collection_for_select(@terms, "id", "item"), {:include_blank => true} %>
+    <%= submit_tag "Get databases by subject", :name => nil, :class => 'btn' %>
   </p>
 
 <% end %>
@@ -19,7 +19,7 @@
 <%= form_tag resources_path, :method => 'get' do %>
   <p>
      <%= hidden_field_tag :all_active, params[:all_active] %>
-    <%= submit_tag "View All", :name => nil %>
+    <%= submit_tag "View All Databases", :name => nil, :class => 'btn' %>
   </p>
 <% end %>
 
