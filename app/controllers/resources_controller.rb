@@ -4,7 +4,15 @@
   before_filter :authorize, :except => [:index, :show]
 
   def index
-    @resources = Resource.search(params[:search])
+    if params[:subject_search]
+      @resources = Resource.subject_search(params[:subject_search])
+    elsif params[:search]
+      @resources = Resource.search(params[:search])
+    elsif params[:all_active]
+      @resources = Resource.all_active
+    else
+      @resources = Resource.popular_resources
+    end
 
     respond_to do |format|
       format.html # index.html.erb
