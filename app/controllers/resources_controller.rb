@@ -14,6 +14,8 @@
       @resources = Resource.popular_resources
     end
 
+    @terms = Term.all_iit_subjects
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @resources }
