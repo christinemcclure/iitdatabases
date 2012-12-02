@@ -30,7 +30,7 @@
   # GET /resources/1.json
   def show
     @resource = Resource.find(params[:id])
-
+    @terms = Term.all_iit_subjects
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @resource }
@@ -41,6 +41,7 @@
   # GET /resources/new.json
   def new
     @resource = Resource.new
+    @terms = Term.all_iit_subjects
 
     respond_to do |format|
       format.html # new.html.erb
@@ -53,12 +54,15 @@
     @resource = Resource.find(params[:id])
     @iit_terms = Term.all_iit_subjects
     @non_iit_terms = Term.all_iit_non_subjects
+    @terms = Term.all_iit_subjects
+
   end
 
   # POST /resources
   # POST /resources.json
   def create
     @resource = Resource.new(params[:resource])
+    @terms = Term.all_iit_subjects
 
     respond_to do |format|
       if @resource.save
