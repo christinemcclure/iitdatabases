@@ -3,9 +3,11 @@ class Term < ActiveRecord::Base
   attr_accessible :iit_subject, :item, :acronym, :notes
 #  has_and_belongs_to_many :resources, :class_name => "Term", :join_table => "resources", :association_foreign_key => ""
   has_and_belongs_to_many :resources
+  before_validation :downcase_terms
   validates :item, presence: true
   default_scope :order => 'terms.item'
   scope :all_iit_subjects, :conditions => {:iit_subject => true}, :order => 'term.item'
+
 
  def item=(val)
     write_attribute(:item, val.downcase)
@@ -21,6 +23,13 @@ class Term < ActiveRecord::Base
 
  def self.all_iit_non_subjects
    find_all_by_iit_subject(false)
+ end
+
+ private
+
+ def downcase_terms
+   self.item = self.item.downcase if self.item.present?
+   self.acronym = self.acronym.downcase if self.acronym.present?
  end
 
 end
