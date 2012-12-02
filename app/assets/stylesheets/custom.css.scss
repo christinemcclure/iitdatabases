@@ -1,5 +1,6 @@
 @import "bootstrap";
 
+.flash-notice{clear:both;}
 .container {
     width: 90%;
     margin: 0 auto;
@@ -10,4 +11,25 @@
         width: 80%;
         margin: 0 auto;
     }
+
+    #navbar-search {
+      background:green;
+     }
+
+    #keyword-search {
+      padding: 20px;
+      background:yellow;
+      margin: 0 0 40px 0;
+      p{
+        float:left;
+        margin: 0 10px;
+      }
+      input {
+        float:left;
+        width:200px;
+        margin: 0 10px;
+      }
+      .btn{width:80px;}
+    }
+
 }
