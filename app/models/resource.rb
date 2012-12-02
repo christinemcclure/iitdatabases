@@ -18,7 +18,8 @@ class Resource < ActiveRecord::Base
 
   def self.subject_search(subject_search)
       #search_condition = "%" + subject_search + "%"
-      joins(:terms).where('term_id = ?', subject_search).group(:title)
+      find_by_sql ["SELECT resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE (term_id = ?) GROUP BY title ORDER BY title", subject_search]
+      # must use above to get record count joins(:terms).where('term_id = ?', subject_search).group(:title)
   end
 
 end
