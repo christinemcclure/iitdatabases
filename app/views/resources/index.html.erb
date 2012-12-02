@@ -7,22 +7,6 @@
 
 <% end %>
 
-  <p>Get databases by subject major </p>
-<%= form_tag resources_path, :method => 'get' do %>
-  <p>
-    <%= select_tag "subject_search", options_from_collection_for_select(@terms, "id", "item"), {:include_blank => true} %>
-    <%= submit_tag "Get databases by subject", :name => nil, :class => 'btn' %>
-  </p>
-
-<% end %>
-
-<%= form_tag resources_path, :method => 'get' do %>
-  <p>
-     <%= hidden_field_tag :all_active, params[:all_active] %>
-    <%= submit_tag "View All Databases", :name => nil, :class => 'btn' %>
-  </p>
-<% end %>
-
 <h1>Listing resources</h1>
 <table>
   <tr>
