@@ -8,11 +8,11 @@
 * Nav: sidebar with admin components at the bottom
 * color scheme
 * Fix sort - should be case-insensitive while keeping title in original case
-* Add pagination
+* Add pagination for all items
 
 
 ##Search
-* Have listbox of iit subjects and pull those databases
+* X Have listbox of iit subjects and pull those databases
 * X Start with just description field only
 * X Try adding multi-level search
 
