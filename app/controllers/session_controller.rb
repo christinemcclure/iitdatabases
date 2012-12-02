@@ -1,6 +1,7 @@
 class SessionController < ApplicationController
 
   def new
+    @terms = Term.all_iit_subjects
   end
   
   def create
