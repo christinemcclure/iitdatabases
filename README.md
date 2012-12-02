@@ -2,9 +2,9 @@
 
 ##Misc
 * X Change links to separate button
-* Make index page filter on favorites only
+* X Make index page filter on favorites only
 * Change index view to show all items for admins
-* On show page, only show popular, access_url, notes if admin
+* X On show page, only show popular, access_url, notes if not admin
 * Nav: sidebar with admin components at the bottom
 * color scheme
 
