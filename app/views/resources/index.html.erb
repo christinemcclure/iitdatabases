@@ -7,6 +7,21 @@
 
 <% end %>
 
+  <p>Get databases by subject major </p>
+<%= form_tag resources_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :subject_search, params[:subject_search] %>
+    <%= submit_tag "Search by Subject", :name => nil %>
+  </p>
+
+<% end %>
+
+<%= form_tag resources_path, :method => 'get' do %>
+  <p>
+     <%= hidden_field_tag :all_active, params[:all_active] %>
+    <%= submit_tag "View All", :name => nil %>
+  </p>
+<% end %>
 
 <h1>Listing resources</h1>
 <table>
