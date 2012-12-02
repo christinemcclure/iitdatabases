@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-  <header>
+  <div class="container well well-large">
+  <header class="well well-large">
    <h1>IIT Libraries</h1>
     <h2>Database finder</h2>
   </header>
@@ -41,11 +41,12 @@
         </div>
        </div>
         <div class="span10">
-          <div id="keyword-search">
+          <div id="keyword-search" class="well well-large">
             <%= form_tag resources_path, :method => 'get', :id => 'keyword_search' do %>
-              <p>Search by keyword, title or subject:</p>
-              <%= text_field_tag :search, params[:search] %>
+              <p>Get a list of databases by keyword, title or subject:</p>
               <%= submit_tag "Search", :name => nil, :class => "btn" %>
+              <%= text_field_tag :search, params[:search] %>
+
             <% end %>
           </div>
   
