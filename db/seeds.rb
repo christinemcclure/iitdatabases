@@ -246,7 +246,7 @@ resource = Resource.create({
   :access_url => "http://www.jstor.org",
   :popular => true
 })
-terms = ["english", "literature", "communications"]
+terms = ["english", "literature", "communications","humanities"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
