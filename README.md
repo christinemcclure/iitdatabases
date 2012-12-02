@@ -9,6 +9,7 @@
 * color scheme
 * Fix sort - should be case-insensitive while keeping title in original case
 * Add pagination for all items
+* Have Subject list be initial caps
 
 
 ##Search
