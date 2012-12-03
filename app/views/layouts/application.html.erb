@@ -17,12 +17,12 @@
        <p>List databases by subject major </p>
         <%= form_tag resources_path, :method => 'get' do %>
           <%= select_tag "subject_search", options_from_collection_for_select(@terms, "id", "item"), {:include_blank => true} %>
-          <%= submit_tag "Go", :name => nil, :class => 'btn' %>
+          <%= submit_tag "Go", :id => "subject-btn", :name => nil, :class => 'btn' %>
       <% end %>
        <p>or</p>
       <%= form_tag resources_path, :method => 'get' do %>
            <%= hidden_field_tag :all_active, params[:all_active] %>
-          <%= submit_tag "View All Databases", :name => nil, :class => 'btn' %>
+          <%= submit_tag "View All Databases", :id => "view-all-btn", :name => nil, :class => 'btn' %>
       <% end %>
 
       <div class="admin">
