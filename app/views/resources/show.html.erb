@@ -1,5 +1,7 @@
 <h2><%= @resource.title %></h2>
-<h3>(<%= @resource.alt_titles %>)</h3>
+<% if @resource.alt_titles? %>
+  <h3>(<%= @resource.alt_titles %>)</h3>
+<% end %>
 <a href="<%= @resource.access_url %>" id="go-to-db" class="btn">Go to database</a>
 <p>
  <% if admin? %>
@@ -35,7 +37,14 @@
 <p>This database has been recommended for the following subjects/keywords:</p>
 <div class="subjects">
 <% @resource.terms.each do |term| %>
-  <div class="subjects-header"><%= term.acronym.upcase%></div>
+   <div class="subjects-header">
+      <%  if term.acronym?%>
+      <%= term.acronym.upcase %>
+      <%  else %>
+       <%= "" %>
+      <%  end %>
+   </div>
+
   <div><%= term.item.titlecase %></div>
 <% end %>
 </div>
