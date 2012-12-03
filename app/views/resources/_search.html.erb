@@ -1,0 +1,7 @@
+        <div id="keyword-search" class="well well-large">
+          <%= form_tag resources_path, :method => 'get', :id => 'keyword_search' do %>
+            <p>Get a list of databases by keyword, title or subject:</p>
+            <%= submit_tag "Search", :name => nil, :class => "btn" %>
+            <%= text_field_tag :search, params[:search] %>
+          <% end %>
+        </div>
