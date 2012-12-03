@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+
+// Colors
 $darkGradient: rgb(150, 12, 3);
 $lightGradient: rgb(192, 12, 0);
 $link: $lightGradient;
@@ -7,9 +9,21 @@ $alpha: .2;
 
 $lightBackground: rgba($lightGradient, $alpha);
 
- #keyword-search{
+#keyword-search{
     background: $lightBackground;
     border: 1px solid $darkGradient;
+    p{
+      width:100%;
+      clear:both;
+    }
+    input {
+      width: 70%;
+      float:left;
+    }
+    input.btn {
+    width:20%;
+    float:right;
+    }
   }
 
 .btn {
@@ -41,6 +55,7 @@ a:hover {
 }
 
 footer.well {
+  padding: 10px 0 10px 20px;
   clear:both;
   color:white;
   a {
@@ -79,19 +94,20 @@ form + p { // 2nd paragraph in nav
   padding: 10px;
   border: 1px dashed grey;
   margin: 20px 0;
+  a {padding: 0;}
 }
 
 
-  header {
-    color:white;
-    background-color:#c00;
-    h1 {font-size: 32px;}
-    h2 {font-size: 28px;}
-    p {
-      font-size: 14px;
-      margin: 20px 0 -10px 0;
-    }
+header {
+  color:white;
+  background-color:#c00;
+  h1 {font-size: 32px;}
+  h2 {font-size: 28px;}
+  p {
+    font-size: 14px;
+    margin: 20px 0 -10px 0;
   }
+}
 
 .flash-notice{
   clear:both;
@@ -141,7 +157,7 @@ form + p { // 2nd paragraph in nav
     input {
       float:right;
       width:200px;
-      margin: 0 10px;
+      margin: -20px 12px 0 12px;
     }
     .btn{width:80px;float:right;}
   }
