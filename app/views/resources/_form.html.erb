@@ -12,44 +12,47 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :alt_titles %><br />
-    <%= f.text_field :alt_titles %>
-  </div>
-  <div class="field">
-    <%= f.label :owner %><br />
-    <%= f.text_field :owner %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :restricted %><br />
-    <%= f.check_box :restricted %>
-  </div>
-  <div class="field">
-    <%= f.label :active %><br />
-    <%= f.check_box :active %>
-  </div>
-  <div class="field">
-    <%= f.label :access_url %><br />
-    <%= f.text_field :access_url %>
-  </div>
-  <div class="field">
-    <%= f.label :popular %><br />
-    <%= f.check_box :popular %>
-  </div>
-  <div class="field">
-    <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
-  </div>
+<table id="resource-form" class="table">
+  <tr>
+    <td><%= f.label :title %></td>
+    <td><%= f.text_field :title %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :alt_titles %></td>
+    <td><%= f.text_field :alt_titles %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :owner %></td>
+    <td><%= f.text_field :owner %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :description %></td>
+    <td><%= f.text_area :description %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :restricted %></td>
+    <td><%= f.check_box :restricted %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :active %></td>
+    <td><%= f.check_box :active %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :access_url %></td>
+    <td><%= f.text_field :access_url %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :popular %></td>
+    <td><%= f.check_box :popular %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :notes %></td>
+    <td><%= f.text_area :notes %></td>
+  </tr>
+</table>
 
-<ul>
+
+<ul class="unstyled">
   <h2>IIT Subject Associations:</h2>
   <% @iit_terms.each do |term| %>
     <li>
@@ -61,7 +64,7 @@
     </li>
 </ul>
 
-<ul>
+<ul class="unstyled">
   <h2>Other Associations:</h2>
   <% @non_iit_terms.each do |term| %>
     <li>
