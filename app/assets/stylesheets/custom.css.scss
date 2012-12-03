@@ -9,6 +9,25 @@
   background:white;
 }
 
+#subject-btn {
+  margin: -10px 0 0 10px;
+}
+
+#view-all-btn {
+  width: 220px; // match the subject box
+}
+
+form + p { // 2nd paragraph in nav 
+  margin: -10px 0 20px 0;
+}
+
+.admin {
+  width: 200px;
+  padding: 10px;
+  border: 1px dashed grey;
+  margin: 20px 0;
+}
+
 header {
   
 }
@@ -30,6 +49,11 @@ footer {
 }
 
 @media (min-width: 980px) {
+
+  .admin {
+    margin: 200px 0 20px 0;
+  }
+
     .container {
         width: 90%;
     }
