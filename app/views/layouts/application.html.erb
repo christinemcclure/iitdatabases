@@ -11,6 +11,7 @@
     <header class="well well-large">
       <h1>IIT Libraries</h1>
       <h2>Database finder</h2>
+      <p>Doing research? Our Database Finder will help you lookup resources by keyword or subject major.</p>
     </header>
 
     <div id="navbar-search">
@@ -26,8 +27,6 @@
       <% end %>
 
       <div class="admin">
-        <%= link_to 'Login', login_path %> |
-        <%= link_to 'Logout', logout_path %>
         <%
           if admin?
             status_msg = "logged in"
@@ -35,7 +34,9 @@
             status_msg = "guest"
           end
         %>
-        <p><%= status_msg %></p>
+        <p>Status: <%= status_msg %></p>
+        <%= link_to 'Login', login_path %> |
+        <%= link_to 'Logout', logout_path %>
       </div>
      </div>
 
