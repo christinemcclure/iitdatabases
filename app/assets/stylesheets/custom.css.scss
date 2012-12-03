@@ -23,11 +23,12 @@ h1 {
 }
 
 // MOBILE
-html { // to get background gradient to stretch to bottom of screen
-  height: 100%;
+html{
+  background: $lightRed; /* Old browsers */
 }
-body{
-  background: $darkRed; /* Old browsers */
+
+body, html{
+  background: $lightRed; /* Old browsers */
   background: -moz-linear-gradient(top,  $darkRed 0%, $lightRed 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$darkRed), color-stop(100%,$lightRed)); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  $darkRed 0%,$lightRed 100%); /* Chrome10+,Safari5.1+ */
