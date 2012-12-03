@@ -26,7 +26,7 @@ $lightBackground: rgba($lightGradient, $alpha);
     }
   }
 
-.btn {
+.btn, select {
   border: 1px solid $darkGradient;
 }
 
