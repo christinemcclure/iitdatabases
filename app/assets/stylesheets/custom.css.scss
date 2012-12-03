@@ -9,6 +9,25 @@ $alpha: .2;
 
 $lightBackground: rgba($lightGradient, $alpha);
 
+.clear {clear:both;}
+
+.subjects {
+  font-size: 16px;
+  margin: 20px 0;
+  div {
+    float:left;
+    margin: 10px 0 0 0;
+  }
+  .subjects-header{
+    clear:left;
+    width: 70px;
+    font-weight:900;
+  }
+
+}
+
+
+
 #keyword-search{
     background: $lightBackground;
     border: 1px solid $darkGradient;
@@ -29,6 +48,8 @@ $lightBackground: rgba($lightGradient, $alpha);
 .btn, select {
   border: 1px solid $darkGradient;
 }
+
+#go-to-db {margin: 20px 0;}
 
 .well {
   background: $darkGradient; /* Old browsers */
