@@ -1,12 +1,19 @@
 @import "bootstrap";
 
 // Colors
-$darkGradient: rgb(150, 12, 3);
-$lightGradient: rgb(192, 12, 0);
-$link: $lightGradient;
+$black: rgb(0,0,0);
+$darkGrey: rgb(71,71,71);
+
+$darkRed: rgb(150, 12, 3);
+$lightRed: rgb(192, 12, 0);
+
+$lightGradient: $darkGrey;
+$darkGradient: $black;
+
+$link: $lightRed;
 $alpha: .2;
 
-$lightBackground: rgba($lightGradient, $alpha);
+$lightBackground: rgba($darkRed, $alpha);
 
 // generic rules
 .clear {clear:both;}
@@ -16,6 +23,20 @@ h1 {
 }
 
 // MOBILE
+html { // to get background gradient to stretch to bottom of screen
+  height: 100%;
+}
+body{
+  background: $darkRed; /* Old browsers */
+  background: -moz-linear-gradient(top,  $darkRed 0%, $lightRed 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$darkRed), color-stop(100%,$lightRed)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $darkRed 0%,$lightRed 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $darkRed 0%,$lightRed 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $darkRed 0%,$lightRed 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $darkRed 0%,$lightRed 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$darkRed', endColorstr='$lightRed',GradientType=0 ); /* IE6-9 */
+}
+
 
 // Gradient for colored backgrounds
 .well {
@@ -42,12 +63,13 @@ h1 {
   margin: 0 auto;
   margin-top:30px;
   padding: 20px;
+  border: 1px solid $darkRed;
   background:white;
 }
 
 // LINKS
 a {
-  color:$lightGradient;
+  color:$link;
   padding: 4px 20px 4px 4px;
 }
 

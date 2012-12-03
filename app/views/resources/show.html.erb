@@ -1,7 +1,12 @@
 <h2><%= @resource.title %></h2>
 <h3>(<%= @resource.alt_titles %>)</h3>
 <a href="<%= @resource.access_url %>" id="go-to-db" class="btn">Go to database</a>
-<p><%= link_to 'Edit', edit_resource_path(@resource) %>|&nbsp; <%= link_to 'Back to List', resources_path %></p>
+<p>
+ <% if admin? %>
+  <%= link_to 'Edit', edit_resource_path(@resource) %>|&nbsp;
+ <% end %>
+  <%= link_to 'Back to List', resources_path %>
+</p>
 
 <table class="table table-bordered">
   <tr>
