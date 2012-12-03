@@ -1,50 +1,37 @@
-<p>
-  <b>Title:</b>
-  <%= @resource.title %>
-</p>
+<h2><%= @resource.title %></h2>
+<h3>(<%= @resource.alt_titles %>)</h3>
+<a href="<%= @resource.access_url %>" id="go-to-db" class="btn">Go to database</a>
+<p><%= link_to 'Edit', edit_resource_path(@resource) %>|&nbsp; <%= link_to 'Back to List', resources_path %></p>
 
-<p>
-  <b>Alt titles:</b>
-  <%= @resource.alt_titles %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @resource.description %>
-</p>
-
-<p>
-  <b>Restricted:</b>
-  <%= @resource.restricted %>
-</p>
-
-<p>
-  <b>Active:</b>
-  <%= @resource.active %>
-</p>
-
-<p>
-  <b>Access url:</b>
-  <%= @resource.access_url %>
-</p>
-
-<p>
-  <b>Popular:</b>
-  <%= @resource.popular %>
-</p>
-
-<p>
-  <b>Notes:</b>
-  <%= @resource.notes %>
-</p>
-
-<ul>
-<% @resource.terms.each do |term| %>
-  <li>
-    <p><%= term.item %> <%= term.acronym  %> </p>
-  </li>
+<table class="table table-bordered">
+  <tr>
+    <td>Description:</td>
+    <td><%= @resource.description %></td>
+  </tr>
+  <tr>
+    <td>Access:</td>
+    <td><%= restrictions_note %></td>
+  </tr>
+  <tr>
+    <td>Popular?</td>
+    <td><%= popular_note %> </td>
+  </tr>
+<% if admin? %>
+    <tr>
+    <td>Active?</td>
+    <td><%= @resource.active %></td>
+  </tr>
+  <tr>
+    <td>Notes:</td>
+    <td><%= @resource.notes %></td>
+  </tr>
 <% end %>
-</ul>
-
-<%= link_to 'Edit', edit_resource_path(@resource) %> |
-<%= link_to 'Back', resources_path %>
+</table>
+<p>This database has been recommended for the following subjects/keywords:</p>
+<div class="subjects">
+<% @resource.terms.each do |term| %>
+  <div class="subjects-header"><%= term.acronym.upcase%></div>
+  <div><%= term.item.titlecase %></div>
+<% end %>
+</div>
+<p class="clear">&nbsp;</p> <!-- bump for footer -->
