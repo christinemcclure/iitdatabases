@@ -1,6 +1,5 @@
 @import "bootstrap";
 
-
 // Colors
 $darkGradient: rgb(150, 12, 3);
 $lightGradient: rgb(192, 12, 0);
@@ -9,48 +8,12 @@ $alpha: .2;
 
 $lightBackground: rgba($lightGradient, $alpha);
 
+// generic rules
 .clear {clear:both;}
 
-.subjects {
-  font-size: 16px;
-  margin: 20px 0;
-  div {
-    float:left;
-    margin: 10px 0 0 0;
-  }
-  .subjects-header{
-    clear:left;
-    width: 70px;
-    font-weight:900;
-  }
+// MOBILE
 
-}
-
-
-
-#keyword-search{
-    background: $lightBackground;
-    border: 1px solid $darkGradient;
-    p{
-      width:100%;
-      clear:both;
-    }
-    input {
-      width: 70%;
-      float:left;
-    }
-    input.btn {
-    width:20%;
-    float:right;
-    }
-  }
-
-.btn, select {
-  border: 1px solid $darkGradient;
-}
-
-#go-to-db {margin: 20px 0;}
-
+// Gradient for colored backgrounds
 .well {
   background: $darkGradient; /* Old browsers */
   background: -moz-linear-gradient(top,  $darkGradient 0%, $lightGradient 100%); /* FF3.6+ */
@@ -63,6 +26,22 @@ $lightBackground: rgba($lightGradient, $alpha);
   border: 1px solid $darkGradient;
 }
 
+
+.btn, select {
+  border: 1px solid $darkGradient;
+}
+
+
+.container {
+  width:90%;
+  border: 4px solid #c00;
+  margin: 0 auto;
+  margin-top:30px;
+  padding: 20px;
+  background:white;
+}
+
+// LINKS
 a {
   color:$lightGradient;
   padding: 4px 20px 4px 4px;
@@ -73,6 +52,20 @@ a:hover {
   padding: 4px 20px 4px 4px;
   background: $lightBackground;
   color: black;
+}
+
+
+// HEADER and FOOTER
+
+header {
+  color:white;
+  background-color:#c00;
+  h1 {font-size: 32px;}
+  h2 {font-size: 28px;}
+  p {
+    font-size: 14px;
+    margin: 20px 0 -10px 0;
+  }
 }
 
 footer.well {
@@ -90,14 +83,61 @@ footer.well {
   }
 }
 
-.container {
-  width:90%;
-  border: 4px solid #c00;
-  margin: 0 auto;
-  margin-top:30px; 
-  padding: 20px;
-  background:white;
+// NAVBAR
+
+#navbar-search {
+  width: 100%;
 }
+
+.admin {
+  width: 200px;
+  padding: 10px;
+  border: 1px dashed grey;
+  margin: 20px 0;
+  background: whiteSmoke;
+  a {padding: 0;}
+}
+
+
+
+
+// SEARCH
+#keyword-search{
+    background: $lightBackground;
+    border: 1px solid $darkGradient;
+    p{
+      width:100%;
+      clear:both;
+    }
+    input {
+      width: 70%;
+      float:left;
+    }
+    input.btn {
+    width:20%;
+    float:right;
+    }
+  }
+
+// for subject list in resource show
+.subjects {
+  font-size: 16px;
+  margin: 20px 0;
+  div {
+    float:left;
+    margin: 10px 0 0 0;
+  }
+  .subjects-header{
+    clear:left;
+    width: 70px;
+    font-weight:900;
+  }
+
+}
+
+
+// Button in Resource show
+#go-to-db {margin: 20px 0;}
 
 #subject-btn {
   margin: -10px 0 0 10px;
@@ -111,34 +151,11 @@ form + p { // 2nd paragraph in nav
   margin: -10px 0 20px 0;
 }
 
-.admin {
-  width: 200px;
-  padding: 10px;
-  border: 1px dashed grey;
-  margin: 20px 0;
-  background: whiteSmoke;
-  a {padding: 0;}
-}
-
-
-header {
-  color:white;
-  background-color:#c00;
-  h1 {font-size: 32px;}
-  h2 {font-size: 28px;}
-  p {
-    font-size: 14px;
-    margin: 20px 0 -10px 0;
-  }
-}
 
 .flash-notice{
   clear:both;
 }
 
-#navbar-search {
-  width: 100%;
-}
 
 #main-block {
   width: 100%;
@@ -150,6 +167,8 @@ header {
     width:85%;
   }
 }
+
+// DESKTOP
 
 @media (min-width: 980px) {
 
