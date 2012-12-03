@@ -8,60 +8,59 @@
 </head>
 <body>
   <div class="container well well-large">
-  <header class="well well-large">
-   <h1>IIT Libraries</h1>
-    <h2>Database finder</h2>
-  </header>
-    <div class="row">
-      <div class="span3">
-        <div id="navbar-search">
-         <p>List databases by subject major </p>
-          <%= form_tag resources_path, :method => 'get' do %>
-            <%= select_tag "subject_search", options_from_collection_for_select(@terms, "id", "item"), {:include_blank => true} %>
-            <%= submit_tag "Go", :name => nil, :class => 'btn' %>
-        <% end %>
-         <p>or</p>
+    <header class="well well-large">
+      <h1>IIT Libraries</h1>
+      <h2>Database finder</h2>
+    </header>
+
+    <div id="navbar-search">
+       <p>List databases by subject major </p>
         <%= form_tag resources_path, :method => 'get' do %>
-             <%= hidden_field_tag :all_active, params[:all_active] %>
-            <%= submit_tag "View All Databases", :name => nil, :class => 'btn' %>
+          <%= select_tag "subject_search", options_from_collection_for_select(@terms, "id", "item"), {:include_blank => true} %>
+          <%= submit_tag "Go", :name => nil, :class => 'btn' %>
+      <% end %>
+       <p>or</p>
+      <%= form_tag resources_path, :method => 'get' do %>
+           <%= hidden_field_tag :all_active, params[:all_active] %>
+          <%= submit_tag "View All Databases", :name => nil, :class => 'btn' %>
+      <% end %>
+
+      <div class="admin">
+        <%= link_to 'Login', login_path %> |
+        <%= link_to 'Logout', logout_path %>
+        <%
+          if admin?
+            status_msg = "logged in"
+          else
+            status_msg = "guest"
+          end
+        %>
+        <p><%= status_msg %></p>
+      </div>
+     </div>
+
+      <div id="main-block">
+        <div id="keyword-search" class="well well-large">
+          <%= form_tag resources_path, :method => 'get', :id => 'keyword_search' do %>
+            <p>Get a list of databases by keyword, title or subject:</p>
+            <%= submit_tag "Search", :name => nil, :class => "btn" %>
+            <%= text_field_tag :search, params[:search] %>
+          <% end %>
+        </div>
+
+        <% if flash[:alert] %>
+          <p class="flash-error"><%= flash[:alert] %></p>
+        <% end %>
+        <% if flash[:notice] %>
+          <p class="flash-notice"><%= flash[:notice] %></p>
         <% end %>
 
-        <div class="admin">
-          <%= link_to 'Login', login_path %> |
-          <%= link_to 'Logout', logout_path %>
-          <%
-            if admin?
-              status_msg = "logged in"
-            else
-              status_msg = "guest"
-            end
-          %>
-          <p><%= status_msg %></p>
-        </div>
-        </div>
-       </div>
-        <div class="span10">
-          <div id="keyword-search" class="well well-large">
-            <%= form_tag resources_path, :method => 'get', :id => 'keyword_search' do %>
-              <p>Get a list of databases by keyword, title or subject:</p>
-              <%= submit_tag "Search", :name => nil, :class => "btn" %>
-              <%= text_field_tag :search, params[:search] %>
+        <%= yield %>
 
-            <% end %>
-          </div>
+      </div>
+
+  </div> <!-- end main container -->
   
-          <% if flash[:alert] %>
-            <p class="flash-error"><%= flash[:alert] %></p>
-          <% end %>
-          <% if flash[:notice] %>
-            <p class="flash-notice"><%= flash[:notice] %></p>
-          <% end %>
-          <%= yield %>
-        </div>
-      
-    </div>
-
-  </div>
 
 </body>
 </html>
