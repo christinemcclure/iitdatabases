@@ -21,9 +21,10 @@ Resource.delete_all
 Term.delete_all
 
 terms = Term.create ([
-  {:item => "airforce aerospace studies",:acronym => "AS",:iit_subject => true},
+
+  {:item => "airforce aerospace studies",:acronym => "as",:iit_subject => true},
   {:item => "anthropology",:acronym => "anth",:iit_subject => true},
-  {:item => "archiecture",:acronym => "arch",:iit_subject => true},
+  {:item => "architecture",:acronym => "arch",:iit_subject => true},
   {:item => "architecture and urbanism",:acronym => "aurb",:iit_subject => true},
   {:item => "art and architectural history",:acronym => "aah",:iit_subject => true},
   {:item => "biology",:acronym => "biol",:iit_subject => true},
@@ -45,16 +46,16 @@ terms = Term.create ([
   {:item => "environmental management and sustainability",:acronym => "ems",:iit_subject => true},
   {:item => "exchange student",:acronym => "ex",:iit_subject => false},
   {:item => "food process engineering",:acronym => "fpe",:iit_subject => true},
-  {:item => "Food Safety and Technology",:acronym => "fst",:iit_subject => true},
+  {:item => "food safety and technology",:acronym => "fst",:iit_subject => true},
   {:item => "general engineering",:acronym => "egr",:iit_subject => false},
   {:item => "general",:acronym => "",:iit_subject => false},
-  {:item => "Graduate Continuation Studies",:acronym => "gcs",:iit_subject => false},
+  {:item => "graduate continuation studies",:acronym => "gcs",:iit_subject => false},
   {:item => "history",:acronym => "hist",:iit_subject => true},
   {:item => "humanities",:acronym => "hum",:iit_subject => true},
-  {:item => "Industrial Technology and Management",:acronym => "intm",:iit_subject => true},
+  {:item => "industrial technology and management",:acronym => "intm",:iit_subject => true},
   {:item => "information technology and management",:acronym => "itm",:iit_subject => true},
-  {:item => "Institute of Design",:acronym => "id",:iit_subject => true},
-  {:item => "intellectual property management and markets",:acronym => "IPMM",:iit_subject => true},
+  {:item => "institute of design",:acronym => "id",:iit_subject => true},
+  {:item => "intellectual property management and markets",:acronym => "ipmm",:iit_subject => true},
   {:item => "internship",:acronym => "",:iit_subject => false},
   {:item => "interprofessional project",:acronym => "ipro",:iit_subject => true},
   {:item => "itcp security",:acronym => "",:iit_subject => true},
@@ -73,9 +74,9 @@ terms = Term.create ([
   {:item => "philosophy",:acronym => "phil",:iit_subject => true},
   {:item => "physics",:acronym => "phys",:iit_subject => true},
   {:item => "political science",:acronym => "ps",:iit_subject => true},
-  {:item => "pro learning online",:acronym => "",:iit_subject => false}, 
+  {:item => "pro learning online",:acronym => "",:iit_subject => false},
   {:item => "professional communication advancement",:acronym => "",:iit_subject => true},
-  {:item => "professional learning",:acronym => "",:iit_subject => true},  
+  {:item => "professional learning",:acronym => "",:iit_subject => true},
   {:item => "proficiency of english as a second language",:acronym => "",:iit_subject => true},
   {:item => "pschology",:acronym => "psyc",:iit_subject => true},
   {:item => "public administration",:acronym => "pa",:iit_subject => true},
@@ -140,7 +141,7 @@ resource = Resource.create({
   :access_url => "http://search.EBSCOhost.com/login.asp?profile=web&defaultdb=bvh",
   :popular => false
 })
-terms = ["archiecture","architecture and urbanism"]
+terms = ["architecture","architecture and urbanism"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -155,7 +156,7 @@ resource = Resource.create({
   :access_url => "http://library.books24x7.com/library.asp?^B",
   :popular => true
 })
-terms = ["computer science","civil and architectural engineering","technology", "Engineering Graphics", "information technology and management", "communications"]
+terms = ["computer science","civil and architectural engineering","technology", "engineering graphics", "information technology and management", "communications"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -170,7 +171,7 @@ resource = Resource.create({
   :access_url => "http://search.proquest.com/pqdtlocal",
   :popular => false
 })
-terms = ["general", "Graduate Continuation Studies", "undergraduate continuing studies"]
+terms = ["general", "graduate continuation studies", "undergraduate continuing studies"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -185,7 +186,7 @@ resource = Resource.create({
   :access_url => "http://search.EBSCOhost.com/login.asp?profile=web&defaultdb=eric",
   :popular => true
 })
-terms = ["Cooperative Education", "mathematics and science education"]
+terms = ["cooperative education", "mathematics and science education"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -230,7 +231,7 @@ resource = Resource.create({
   :access_url => "http://apps.webofknowledge.com/INSPEC_GeneralSearch_input.do?product=INSPEC&search_mode=GeneralSearch",
   :popular => false
 })
-terms = ["technology", "computer science", "communications", "Civil and Architectural Engineering", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms = ["technology", "computer science", "communications", "civil and architectural engineering", "electrical and computer engineering", "engineering management", "environmental engineering", "general engineering", "mechanical, materials and aerospace engineering"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -290,7 +291,7 @@ resource = Resource.create({
   :access_url => "http://apps.webofknowledge.com/WOS_GeneralSearch_input.do?product=WOS&search_mode=GeneralSearch",
   :popular => true
 })
-terms = ["chemistry", "physics", "materials science", "Biomedical Engineering", "biology", "chemical engineering", "Food Process Engineering", "Food Safety and Technology"]
+terms = ["chemistry", "physics", "materials science", "biomedical engineering", "biology", "chemical engineering", "food process engineering", "food safety and technology"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -320,7 +321,7 @@ resource = Resource.create({
   :access_url => "http://search.proquest.com/technologycollection",
   :popular => false
 })
-terms = ["chemistry", "physics", "materials science", "Biomedical Engineering", "biology", "chemical engineering", "Food Process Engineering", "Food Safety and Technology", "technology", "communications"]
+terms = ["chemistry", "physics", "materials science", "biomedical engineering", "biology", "chemical engineering", "food process engineering", "food safety and technology", "technology", "communications"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -395,7 +396,7 @@ resource = Resource.create({
   :access_url => "",
   :popular => false
 })
-terms = ["Civil and Architectural Engineering", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms = ["civil and architectural engineering", "electrical and computer engineering", "engineering management", "environmental engineering", "general engineering", "mechanical, materials and aerospace engineering"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -471,7 +472,7 @@ resource = Resource.create({
   :access_url => "http://ascelibrary.org",
   :popular => false
 })
-terms = ["Civil and Architectural Engineering", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms = ["civil and architectural engineering", "electrical and computer engineering", "engineering management", "environmental engineering", "general engineering", "mechanical, materials and aerospace engineering"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -487,7 +488,7 @@ resource = Resource.create({
   :access_url => "http://products.asminternational.org/hbk/index.jsp",
   :popular => false
 })
-terms = ["Civil and Architectural Engineering", "Materials Science", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms = ["civil and architectural engineering", "materials science", "electrical and computer engineering", "engineering management", "environmental engineering", "general engineering", "mechanical, materials and aerospace engineering"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -503,7 +504,7 @@ resource = Resource.create({
   :access_url => "http://products.asminternational.org/alloycenter/index.jsp",
   :popular => false
 })
-terms = ["Civil and Architectural Engineering", "Materials Science", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms = ["civil and architectural engineering", "materials science", "electrical and computer engineering", "engineering management", "environmental engineering", "general engineering", "mechanical, materials and aerospace engineering"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -519,7 +520,7 @@ resource = Resource.create({
   :access_url => "http://ojps.aip.org/vsearch/servlet/VerityServlet?KEY=ALL",
   :popular => false
 })
-terms = ["Civil and Architectural Engineering", "Materials Science", "Electrical and Computer Engineering", "engineering management", "Environmental Engineering", "general engineering", "mechanical, materials and aerospace engineering"]
+terms = ["civil and architectural engineering", "materials science", "electrical and computer engineering", "engineering management", "environmental engineering", "general engineering", "mechanical, materials and aerospace engineering"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
@@ -535,7 +536,7 @@ resource = Resource.create({
   :access_url => "http://apps.webofknowledge.com/BIOABS_GeneralSearch_input.do?product=BIOABS&search_mode=GeneralSearch",
   :popular => false
 })
-terms = ["chemistry", "physics", "materials science", "Biomedical Engineering", "biology", "chemical engineering", "Food Process Engineering", "Food Safety and Technology"]
+terms = ["chemistry", "physics", "materials science", "biomedical engineering", "biology", "chemical engineering", "food process engineering", "food safety and technology"]
 terms.each do |s|
   resource.terms << Term.find_or_create_by_item(s)
 end
