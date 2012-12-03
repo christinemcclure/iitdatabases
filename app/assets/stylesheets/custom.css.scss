@@ -29,7 +29,12 @@ form + p { // 2nd paragraph in nav
 }
 
 header {
-  
+  h1 {font-size: 32px;}
+  h2 {font-size: 28px;}
+  p {
+    font-size: 14px;
+    margin: 20px 0 -10px 0;
+  }
 }
 
 footer {
@@ -50,40 +55,44 @@ footer {
 
 @media (min-width: 980px) {
 
+  header {
+    p {
+      width: 35%;
+      float:right;
+      text-align:right;
+      margin: -50px 0 0 0;
+    }
+  }
   .admin {
     margin: 200px 0 20px 0;
   }
 
-    .container {
-        width: 90%;
-    }
+  #navbar-search {
+    width: 30%;
+    float:left;
+   }
 
-    #navbar-search {
-      width: 30%;
+  #main-block {
+    width: 70%;
+    float:right;
+  }
+
+  #keyword-search {
+
+    padding: 20px 20px 30px 20px;
+    background:yellow;
+    margin: 0 0 40px 0;
+
+    p{
       float:left;
-     }
-
-    #main-block {
-      width: 70%;
+      margin: 8px 0 0 0;
+    }
+    input {
       float:right;
+      width:200px;
+      margin: 0 10px;
     }
-
-    #keyword-search {
-
-      padding: 20px 20px 30px 20px;
-      background:yellow;
-      margin: 0 0 40px 0;
-     
-      p{
-        float:left;
-        margin: 8px 0 0 0;
-      }
-      input {
-        float:right;
-        width:200px;
-        margin: 0 10px;
-      }
-      .btn{width:80px;float:right;}
-    }
+    .btn{width:80px;float:right;}
+  }
 
 }
