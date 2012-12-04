@@ -22,14 +22,21 @@
       <% end %>
        <p>or</p>
       <%= form_tag resources_path, :method => 'get' do %>
+       
          <% if admin? %>
-          <%=  hidden_field_tag :all_records %>
+          <%=  hidden_field_tag :all_records, params[:all_records] %>
          <% else %>
-           <%=  hidden_field_tag params[:all_active] %>
+           <%= hidden_field_tag :all_active, params[:all_active] %>
          <% end %>
+
          <%= submit_tag "View All Databases", :id => "view-all-btn", :name => nil, :class => 'btn' %>
       <% end %>
 
+      <%#= form_tag resources_path, :method => 'get' do %>
+           <%#= hidden_field_tag :all_active, params[:all_active] %>
+          <%#= submit_tag "View All Databases", :id => "view-all-btn", :name => nil, :class => 'btn' %>
+      <%# end %>
+       
       <div class="admin">
         <%
           if admin?
