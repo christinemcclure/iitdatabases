@@ -19,10 +19,11 @@ class Resource < ActiveRecord::Base
   end
 
   def self.subject_search(subject_search)
-    #search_condition = "%" + subject_search + "%"
-    #find_by_sql ["SELECT resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE (term_id = ?) GROUP BY title ORDER BY title", subject_search]
+    #joins(:terms).where('term_id = ?', subject_search).group(:title)
     # must use sql to get record count
-    joins(:terms).where('term_id = ?', subject_search).group(:title)
+    #find_by_sql ["SELECT resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE (term_id = ?) GROUP BY title ORDER BY title", subject_search]
+    #this works on heroku
+    find_by_sql ["SELECT DISTINCT ON (resources.title) resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE (term_id = ?)", subject_search]
   end
 
 end
