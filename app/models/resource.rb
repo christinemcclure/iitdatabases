@@ -15,7 +15,7 @@ class Resource < ActiveRecord::Base
     search_condition = "%" + search + "%"
     #find_by_sql ["SELECT resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE ((title LIKE ? OR alt_titles LIKE ? OR description LIKE ?) OR (item LIKE ? OR acronym like ?)) GROUP BY title ORDER BY title", search_condition, search_condition, search_condition, search_condition, search_condition]
     #this works on Heroku
-    find_by_sql ['SELECT DISTINCT ON (resources.title) resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE ((lower(description) LIKE lower(?)) OR (lower(title) LIKE lower(?)) OR (lower(alt_titles) LIKE lower(?)) )', search_condition, search_condition, search_condition]
+    find_by_sql ['SELECT DISTINCT ON (resources.title) resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE ((lower(description) LIKE lower(?)) OR (lower(title) LIKE lower(?)) OR (lower(alt_titles) LIKE lower(?)) OR (lower(term.item) LIKE lower(?)) OR (lower(acronym) LIKE lower(?)))', search_condition, search_condition, search_condition, search_condition, search_condition]
   end
 
   def self.subject_search(subject_search)
