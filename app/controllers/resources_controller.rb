@@ -42,6 +42,8 @@
   def new
     @resource = Resource.new
     @terms = Term.all_iit_subjects
+    @iit_terms = Term.all_iit_subjects
+    @non_iit_terms = Term.all_iit_non_subjects
 
     respond_to do |format|
       format.html # new.html.erb
