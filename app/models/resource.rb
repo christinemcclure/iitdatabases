@@ -13,13 +13,15 @@ class Resource < ActiveRecord::Base
 
   def self.search(search)
       search_condition = "%" + search + "%"
-      find_by_sql ["SELECT resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE ((title LIKE ? OR alt_titles LIKE ? OR description LIKE ?) OR (item LIKE ? OR acronym like ?)) GROUP BY title ORDER BY title", search_condition, search_condition, search_condition, search_condition, search_condition]
+      #find_by_sql ["SELECT resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE ((title LIKE ? OR alt_titles LIKE ? OR description LIKE ?) OR (item LIKE ? OR acronym like ?)) GROUP BY title ORDER BY title", search_condition, search_condition, search_condition, search_condition, search_condition]
+      where('lower(title) LIKE lower(?) OR lower(alt_titles) LIKE lower(?) OR lower(description) LIKE lower(?)', search_condition, search_condition, search_condition).group(:title);
   end
 
   def self.subject_search(subject_search)
       #search_condition = "%" + subject_search + "%"
-      find_by_sql ["SELECT resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE (term_id = ?) GROUP BY title ORDER BY title", subject_search]
-      # must use sql to get record count joins(:terms).where('term_id = ?', subject_search).group(:title)
+      #find_by_sql ["SELECT resources.* FROM resources INNER JOIN resources_terms ON resources_terms.resource_id = resources.id INNER JOIN terms ON terms.id = resources_terms.term_id WHERE (term_id = ?) GROUP BY title ORDER BY title", subject_search]
+      # must use sql to get record count
+      joins(:terms).where('term_id = ?', subject_search).group(:title)
   end
 
 end
