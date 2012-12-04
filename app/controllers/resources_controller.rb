@@ -10,7 +10,8 @@
       @resources = Resource.search(params[:search])
     elsif params[:all_active]
       @resources = Resource.all_active
-      skip_count = 1 # don't show record count for generic display
+    elsif params[:all_records]
+      @resources = Resource.find(:all)
     else
       @resources = Resource.popular_resources
       skip_count = 1
